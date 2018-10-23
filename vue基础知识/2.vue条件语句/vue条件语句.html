@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--vue条件与循环-->
+    <!--条件判断-->
+    <!--v-if指令  在元素和template中使用-->
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <p v-if="seen">现在你看到我了</p>
+    <template v-if="ok">
+        <h1>康乾盛世</h1>
+        <p>遥远的前方，是光明，还是。。。</p>
+    </template>
+</div>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            seen:true,
+            ok:true
+        }
+    })
+</script>
+</body>
+</html>

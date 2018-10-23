@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--除了直接绑定到一个方法，也可以用内联js语句-->
+		<script src="../vue.js"></script>
+	</head>
+
+	<body>
+		<div id='app'>
+			<button v-on:click="say('hi')">say(hi)</button>
+			<button v-on:click="say('what')">say(what)</button>
+
+		</div>
+		<script>
+			new Vue({
+				el: '#app',
+				methods: {
+					say: function(message) {
+						alert(message)
+					}
+				}
+			})
+		</script>
+	</body>
+
+</html>

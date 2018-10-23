@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../vue.js"></script>
+		   <script type="text/javascript">
+        window.onload = function(){
+            var vm = new Vue({
+                el:'#box',
+                data:{
+                    isShow:false,
+                },
+                methods:{
+                    toggle:function(){
+                        this.isShow = !this.isShow;
+                    }
+                }
+            });
+        }
+    </script>
+		
+	</head>
+	<body>
+		<!--v-show指令：v-show="true/false" 控制元素显示/隐藏-->
+		 <div id="box">
+        <input type="button" value="toggle" v-on:click="toggle()"> <br />
+        <div v-show="isShow" style="width: 100px;height: 100px;background: red"></div>
+    </div>
+	</body>
+</html>
