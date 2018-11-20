@@ -3,60 +3,36 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
-    <!--计算属性关键词: computed。-->
     <!--计算属性在处理一些复杂逻辑时是很有用的。-->
 
 
     <!--求字符串翻转的例子-->
 
-    <script src="../../vue.js"></script>
+    <script src="../vue.js"></script>
 </head>
 <body>
-<!--方法一-->
-<!--<div id="app">-->
-<!--{{message.split().reverse().join()}}-->
-<!--</div>-->
-<!--<script>-->
-<!--new Vue({-->
-<!--el:'#app',-->
-<!--data:{-->
-<!--message:'Runoob!'-->
-<!--}-->
-<!--})-->
-<!--</script>-->
-
-<!--方法二-->
-
-<!--使用 computed 性能会更好，但是如果你不希望缓存，你可以使用 methods 属性-->
+方法一
 <div id="app">
-    <p>{{message}}</p>
-    <p>{{reversedMessage}}</p>
-    <p>{{reversedMessage2}}</p>
+    {{message.split().reverse().join()}}
 </div>
 <script>
-    var vm = new Vue({
+    new Vue({
         el: '#app',
         data: {
             message: 'Runoob!'
-        },
-        computed: {
-            reversedMessage: function () {
-                return this.message.split('').reverse().join('');
-            }
-        },
-        methods: {
-            reversedMessage2: function () {
-                return this.message.split('').reverse().join('');
-            }
         }
     })
 </script>
+
+
 <script>
-    function a()
-    {
-        setTimeout(function(){console.log(1);},0);
+    function a() {
+        setTimeout(function () {
+            console.log(1);
+        }, 0);
         console.log(2);
     }
+
     a();
 
     //JavaScript是单线程执行的，无法同时执行多段代码。当某一段代码正在执行的时候，所有后续的任务都必须等待，形成一个队列。
@@ -67,7 +43,7 @@
     // 仍然要等待前面代码执行完毕。所以 setTimeout 并不能保证执行的时间，是否及时执行取决于 JavaScript 线程是拥挤还是空闲。
 
     var start = new Date();
-    setTimeout(function(){
+    setTimeout(function () {
         var end = new Date();
         console.log("Time elapsed: ", end - start, "ms");
     }, 500);
