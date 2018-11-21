@@ -28,3 +28,5 @@ Vue实例
 3 侦听属性watch
 4 计算属性setter
 5 侦听器
+
+Class与Style绑定

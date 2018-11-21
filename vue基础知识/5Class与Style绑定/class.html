@@ -28,6 +28,10 @@
     我们也可以在对象中传入更多属性用来动态切换多个 class 。
     <!--<div v-bind:class="{active:isActive,danger:hasError}"></div>-->
 
+    我们可以把一个数组传给 v-bind:class，以应用一个 class 列表：
+    <!--<div v-bind:class="[active, danger]"></div>-->
+    <!--<div v-bind:class="[isActive ? active : '', errorClass]"></div>-->
+
     我们也可以直接绑定数据里的一个对象：
     <!--<div v-bind:class="obj"></div>-->
 
