@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ec2f8d6-ee07-4a54-a70c-808e53e87d7f" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/vue基础知识/vue事件处理器/事件修饰符.html" afterPath="$PROJECT_DIR$/vue基础知识/8.事件处理/事件修饰符.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/vue基础知识/vue事件处理器/事件处理器.html" afterPath="$PROJECT_DIR$/vue基础知识/8.事件处理/事件处理器.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/vue基础知识/vue事件处理器/事件处理程序2.html" afterPath="$PROJECT_DIR$/vue基础知识/8.事件处理/事件处理程序2.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/vue基础知识/vue事件处理器/事件处理程序3.html" afterPath="$PROJECT_DIR$/vue基础知识/8.事件处理/事件处理程序3.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/vue基础知识/vue事件处理器/按键修饰符.html" afterPath="$PROJECT_DIR$/vue基础知识/8.事件处理/按键修饰符.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/vue基础知识/vue组件/prop.html" afterPath="$PROJECT_DIR$/vue基础知识/10.组建基础/prop.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/vue基础知识/vue组件/prop验证.html" afterPath="$PROJECT_DIR$/vue基础知识/10.组建基础/prop验证.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/vue基础知识/vue组件/全局组件.html" afterPath="$PROJECT_DIR$/vue基础知识/10.组建基础/全局组件.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/vue基础知识/vue组件/动态prop.html" afterPath="$PROJECT_DIR$/vue基础知识/10.组建基础/动态prop.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/vue基础知识/vue组件/局部组件.html" afterPath="$PROJECT_DIR$/vue基础知识/10.组建基础/局部组件.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/vue基础知识/vue组件/自定义事件.html" afterPath="$PROJECT_DIR$/vue基础知识/10.组建基础/自定义事件.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/vue基础知识/vue表单/select.html" afterPath="$PROJECT_DIR$/vue基础知识/9.表单输入绑定/select.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/vue基础知识/vue表单/修饰符.html" afterPath="$PROJECT_DIR$/vue基础知识/9.表单输入绑定/修饰符.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/vue基础知识/vue表单/单选按钮.html" afterPath="$PROJECT_DIR$/vue基础知识/9.表单输入绑定/单选按钮.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/vue基础知识/vue表单/复选框.html" afterPath="$PROJECT_DIR$/vue基础知识/9.表单输入绑定/复选框.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/vue基础知识/vue表单/表单1.html" afterPath="$PROJECT_DIR$/vue基础知识/9.表单输入绑定/表单1.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/vue基础知识/vue表单/输入框.html" afterPath="$PROJECT_DIR$/vue基础知识/9.表单输入绑定/输入框.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/vue基础知识/6.条件渲染/2.vue循环语句/v-for.html" afterPath="$PROJECT_DIR$/vue基础知识/7.列表渲染/v-for.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,8 +19,8 @@
           <file leaf-file-name="Vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/笔记/Vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="648">
-                  <caret line="18" column="37" lean-forward="false" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+                <state relative-caret-position="684">
+                  <caret line="19" column="8" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
                   <folding />
                 </state>
               </provider>
@@ -49,7 +33,7 @@
           <file leaf-file-name="Vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/笔记/Vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1116">
+                <state relative-caret-position="1025">
                   <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
                   <folding />
                 </state>
@@ -163,6 +147,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -175,11 +160,16 @@
               <item name="vueGrammarLearn" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="vue基础知识" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="vueGrammarLearn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vueGrammarLearn" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vue基础知识" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="8.事件处理" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -188,16 +178,16 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\yuanzhu\Desktop\webLearn\vue\vueGrammarLearn\vue基础知识" />
+      <recent name="C:\Users\yuanzhu\Desktop\webLearn\vue\vueGrammarLearn" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\yuanzhu\Desktop\webLearn\vue\vueGrammarLearn\vue基础知识\7.列表渲染" />
       <recent name="C:\Users\yuanzhu\Desktop\webLearn\vue\vueGrammarLearn\vue基础知识\9.表单输入绑定" />
       <recent name="C:\Users\yuanzhu\Desktop\webLearn\vue\vueGrammarLearn\vue基础知识\8.事件处理" />
       <recent name="C:\Users\yuanzhu\Desktop\webLearn\vue\vueGrammarLearn\vue基础知识\6.条件渲染" />
       <recent name="C:\Users\yuanzhu\Desktop\webLearn\vue\vueGrammarLearn\vue基础知识\4.计算属性和侦听器" />
-      <recent name="C:\Users\yuanzhu\Desktop\webLearn\vue\vueGrammarLearn\vue基础知识\1介绍" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\yuanzhu\Desktop\webLearn\vue\vueGrammarLearn\vue基础知识" />
-      <recent name="C:\Users\yuanzhu\Desktop\webLearn\vue\vueGrammarLearn" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -232,17 +222,18 @@
       <workItem from="1540780761146" duration="1547000" />
       <workItem from="1542696110437" duration="8624000" />
       <workItem from="1542762629638" duration="1977000" />
-      <workItem from="1542789625226" duration="2643000" />
+      <workItem from="1542789625226" duration="3141000" />
+      <workItem from="1542868368993" duration="1056000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36564000" />
+    <option name="totallyTimeSpent" value="38118000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1911" y="-9" width="2516" height="1458" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14496315" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14660114" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -467,13 +458,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vue基础知识/vue自定义指令/自定义指令1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vue基础知识/9.表单输入绑定/修饰符.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -544,7 +528,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vue基础知识/6.条件渲染/2.vue循环语句/v-for.html">
+    <entry file="file://$PROJECT_DIR$/vue基础知识/7.列表渲染/v-for.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-252">
           <caret line="8" column="23" lean-forward="false" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
@@ -639,6 +623,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vue基础知识/5Class与Style绑定/class.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="828">
+          <caret line="32" column="53" lean-forward="false" selection-start-line="32" selection-start-column="53" selection-end-line="32" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue基础知识/vue自定义指令/自定义指令1.html" />
     <entry file="file://$PROJECT_DIR$/vue基础知识/5Class与Style绑定/style.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -647,18 +639,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vue基础知识/5Class与Style绑定/class.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
-          <caret line="32" column="53" lean-forward="false" selection-start-line="32" selection-start-column="53" selection-end-line="32" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/笔记/Vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="18" column="37" lean-forward="false" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+        <state relative-caret-position="684">
+          <caret line="19" column="8" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
           <folding />
         </state>
       </provider>
