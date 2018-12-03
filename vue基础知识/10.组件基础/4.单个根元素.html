@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="blog-post-demo">
+    <blog-post
+            v-for="post in posts"
+            v-bind:post="post"
+    ></blog-post>
+</div>
+<script>
+    Vue.component('blog-post', {
+        props: ['post'],
+        template: '<div class="blog-post">\n' +
+                    '<h3>{{ post.id }}</h3>\n' +
+                    '<div v-html="post.content"></div>\n' +
+                    '</div>'
+    });
+    new Vue({
+        el:'#blog-post-demo',
+        data:{
+            posts:[
+                {id:0,content:'v'},
+                {id:1,content:'u'},
+                {id:2,content:'e'},
+            ]
+        }
+    })
+</script>
+</body>
+</html>

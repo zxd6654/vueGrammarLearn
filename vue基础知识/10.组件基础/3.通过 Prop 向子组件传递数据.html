@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+    Prop 是你可以在组件上注册的一些自定义特性
+</head>
+<body>
+<div id="blog-post-demo">
+    <blog-post title="My journey with Vue"></blog-post>
+    <blog-post title="Blogging with Vue"></blog-post>
+    <blog-post title="Why Vue is so fun"></blog-post>
+</div>
+<script>
+    Vue.component('blog-post', {
+        props: ['title'],
+        template: '<h3>{{title}}</h3>'
+    });
+    new Vue({el:'#blog-post-demo'})
+</script>
+</body>
+</html>
