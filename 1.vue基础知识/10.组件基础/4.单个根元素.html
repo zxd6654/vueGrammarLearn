@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="../../vue.js"></script>
 </head>
+每个组件必须只有一个根元素
+你所构建的每一个组件都需要一个父元素包裹起来,否则就会报错.
+
 <body>
-<div id="blog-post-demo">
-    <blog-post
-            v-for="post in posts"
-            v-bind:post="post"
-    ></blog-post>
-</div>
-<script>
-    Vue.component('blog-post', {
-        props: ['post'],
-        template: '<div class="blog-post">\n' +
-                    '<h3>{{ post.id }}</h3>\n' +
-                    '<div v-html="post.content"></div>\n' +
-                    '</div>'
-    });
-    new Vue({
-        el:'#blog-post-demo',
-        data:{
-            posts:[
-                {id:0,content:'v'},
-                {id:1,content:'u'},
-                {id:2,content:'e'},
-            ]
-        }
-    })
-</script>
+    <div id="blog-post-demo">
+        <blog-post v-for="post in posts" v-bind:post="post"></blog-post>
+    </div>
+    <script>
+        Vue.component('blog-post', {
+            props: ['post'],
+            template: '<div class="blog-post">\n' +
+                '<h3>{{ post.id }}</h3>\n' +
+                '<div v-html="post.content"></div>\n' +
+                '</div>'
+        });
+        new Vue({
+            el: '#blog-post-demo',
+            data: {
+                posts: [
+                    { id: 0, content: 'v' },
+                    { id: 1, content: 'u' },
+                    { id: 2, content: 'e' },
+                ]
+            }
+        })
+    </script>
 </body>
+
 </html>
