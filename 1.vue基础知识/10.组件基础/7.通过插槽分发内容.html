@@ -1,28 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <script src="../../vue.js"></script>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../../vue.js"></script>
 </head>
+
 <body>
-<div id="slot-demo">
+  <div id="slot-demo">
+    和 HTML 元素一样，我们经常需要向一个组件传递内容，像这样：
+    我们只要在需要的地方加入插槽就行了<slot></slot>
+
     <alert-box>
-        Something bad happened.
+      Something bad happened.
     </alert-box>
-</div>
-<script>
+  </div>
+  <script>
     Vue.component('alert-box', {
-        template: `
-    <div class="demo-alert-box">
-      <strong>Error!</strong>
-      <slot></slot>
-    </div>
-  `
+      template: `
+        <div class="demo-alert-box">
+          <strong>Error!</strong>
+          <slot></slot>
+        </div>`
     });
-  new Vue({
-      el:'#slot-demo'
-  })
-</script>
+
+    new Vue({
+      el: '#slot-demo'
+    })
+  </script>
 </body>
+
 </html>
