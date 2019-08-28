@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
-    <!--vue.js是一套构建用户界面的渐进式框架。-->
-    <!--vue只关注视图层，采用自底向上增量开发设计-->
-    <!--vue的目标是通过尽可能简单的api实现响应的数据绑定和组合的视图组件。-->
+    vue.js是一套构建用户界面的渐进式框架。
+    vue只关注视图层，采用自底向上增量开发设计
+    vue的目标是通过尽可能简单的api实现响应的数据绑定和组合的视图组件。
     <script src="../../vue.js"></script>
 
 </head>
+
 <body>
-<div id="app">
-    <p>{{message}}</p>
-</div>
-<script>
-    new Vue({
-        el:'#app',
-        data:{
-            message:'Hello world!'
-        }
-    })
-</script>
+    <div id="app">
+        <p>{{message}}</p>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello world!'
+            }
+        })
+    </script>
 </body>
+
 </html>
