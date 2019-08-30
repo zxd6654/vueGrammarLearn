@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../vue.js"></script>
+</head>
+
+<body>
+    有时候让插槽的内容能够访问子组件中才有的数据是很有用的
+
+    绑定在 <slot> 元素上的特性被称为插槽 prop。
+
+        v-slot:default='slotProps' 缩写:v-slot="slotProps" 不能和具名插槽混用
+
+        解构插槽 Prop v-slot="{ user }"
+
+        <div id='app'>
+            <current-user v-slot:default='slotProps'>
+                {{slotProps.user.firstName}}
+            </current-user>
+        </div>
+
+        <script>
+            Vue.component('current-user', {
+                data() {
+                    return {
+                        user: {
+                            firstName: 'zxd',
+                        }
+                    }
+                },
+                template: `
+           <span><slot v-bind:user='user'>{{user.firstName}}</slot></span>`
+            });
+
+            new Vue({
+                el: '#app'
+            })
+        </script>
+</body>
+
+</html>
