@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+Vue.js 允许你自定义过滤器，可被用于一些常见的文本格式化。
+<!-- 在双花括号中 -->
+{{ message | capitalize }}
+
+<!-- 在 `v-bind` 中 -->
+<div v-bind:id="rawId | formatId"></div>
+
+你可以在一个组件的选项中定义本地的过滤器：
+<script>
+    filters: {
+        capitalize: function (value) {
+            if (!value) return ''
+            value = value.toString()
+            return value.charAt(0).toUpperCase() + value.slice(1)
+        }
+    }
+</script>
+全局定义
+<script>
+    Vue.filter('capitalize', function (value) {
+        if (!value) return ''
+        value = value.toString()
+        return value.charAt(0).toUpperCase() + value.slice(1)
+    })
+
+    new Vue({
+        // ...
+    })
+</script>
+
+<body>
+
+</body>
+
+</html>
