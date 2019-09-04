@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../vue.js"></script>
+</head>
+对于大多数单页面应用，都推荐使用官方支持的 vue-router 库。
+
+<body>
+    <div id='app'>
+
+    </div>
+
+    <script>
+        const NotFound = { template: '<p>Page not found</p>' }
+        const Home = { template: '<p>home page</p>' }
+        const About = { template: '<p>about page</p>' }
+
+        const routes = {
+            '/': Home,
+            '/about': About
+        }
+
+        new Vue({
+            el: '#app',
+            data: {
+                currentRoute: window.location.pathname
+            },
+            computed: {
+                ViewComponent() {
+                    return routes[this.currentRoute] || NotFound
+                }
+            },
+            render(h) { return h(this.ViewComponent) }
+        })
+    </script>
+</body>
+
+</html>
