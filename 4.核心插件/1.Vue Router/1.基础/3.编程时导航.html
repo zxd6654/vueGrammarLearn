@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+router.push、 router.replace 和 router.go
+
+1 使用 router-link 创建 a 标签来定义导航链接，
+2 router 的实例方法，通过编写代码来实现。
+
+<body>
+    <script>
+        // 字符串
+        router.push('home')
+
+        // 对象
+        router.push({
+            path: 'home'
+        })
+
+        // 命名的路由
+        router.push({
+            name: 'user',
+            params: {
+                userId: '123'
+            }
+        })
+
+        // 带查询参数，变成 /register?plan=private
+        router.push({
+            path: 'register',
+            query: {
+                plan: 'private'
+            }
+        })
+    </script>
+</body>
+
+</html>
