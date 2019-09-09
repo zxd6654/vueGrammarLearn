@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    更改Vuex的store中的状态的唯一方法时提交mutation,vuex中的mutation非常类似于事件:
+    每个mutation都有一个字符串的事件类型(type)和一个回调函数(handler).
+    这个回调函数就是我们实际进行状态更改的地方,并且他会接受state作为第一个参数
+    <script>
+        const store = new Vuex.Store({
+            state: {
+                count: 1
+            },
+            mutations: {
+                increment(state, n) {
+                    //变更状态
+                    state.count += n;
+                }
+            }
+        })
+    </script>
+
+    调用的时候:store.commit('increment',10)
+    调用的时候:store.commit('increment',{amount:10})
+    调用的时候:store.commit({type:'increment',amount:10})
+
+
+    Mutation 需遵守 Vue 的响应规则
+
+    Mutation 必须是同步函数
+
+</body>
+
+</html>

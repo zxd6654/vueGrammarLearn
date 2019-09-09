@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+Vuex 使用单一状态树——是的，用一个对象就包含了全部的应用层级状态。
+
+由于 Vuex 的状态存储是响应式的，从 store 实例中读取状态最简单的方法就是在计算属性中返回某个状态
+
+mapState 辅助函数
+当一个组件需要获取多个状态时候，将这些状态都声明为计算属性会有些重复和冗余。为了解决这个问题，我们可以使用 mapState 辅助函数帮助我们生成计算属性，让你少按几次键：
+computed: {
+localComputed () { /* ... */ },
+// 使用对象展开运算符将此对象混入到外部对象中
+...mapState({
+// ...
+})
+}
+
+<body>
+
+</body>
+
+</html>
