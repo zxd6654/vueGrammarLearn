@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0ec2f8d6-ee07-4a54-a70c-808e53e87d7f" name="Default" comment="" />
+    <list default="true" id="0ec2f8d6-ee07-4a54-a70c-808e53e87d7f" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/1.教程/1.vue基础知识/3模板语法/vue实例之delimiters.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.教程/1.vue基础知识/1介绍/vue组件化应用构建/构建实例.html" beforeDir="false" afterPath="$PROJECT_DIR$/1.教程/1.vue基础知识/1介绍/vue组件化应用构建/构建实例.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,7 +13,91 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/1.教程/1.vue基础知识/1介绍/vue组件化应用构建/构建实例.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="252">
+                  <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/1.教程/1.vue基础知识/1介绍/vue简介.html">
+              <provider selected="true" editor-type-id="text-editor" />
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/1.教程/1.vue基础知识/2.Vue实例/2.数据与方法.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1080">
+                  <caret line="30" column="17" lean-forward="true" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/1.教程/1.vue基础知识/2.Vue实例/3.实例生命周期钩子.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="432">
+                  <caret line="12" column="37" lean-forward="true" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/1.教程/1.vue基础知识/3模板语法/v-bind.html">
+              <provider selected="true" editor-type-id="text-editor" />
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/1.教程/1.vue基础知识/3模板语法/v-html.html">
+              <provider selected="true" editor-type-id="text-editor" />
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/1.教程/1.vue基础知识/3模板语法/vue模板语法.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="216">
+                  <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/1.教程/1.vue基础知识/3模板语法/vue实例之delimiters.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="360">
+                  <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/2.API/1.全局配置/7.选项组合.html">
+              <provider selected="true" editor-type-id="text-editor" />
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/1.教程/1.vue基础知识/3模板语法/v-once.html">
+              <provider selected="true" editor-type-id="text-editor" />
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/1.教程/1.vue基础知识/3模板语法/v-once.html">
+              <provider selected="true" editor-type-id="text-editor" />
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -24,6 +112,7 @@
       <find>reverse</find>
       <find>active</find>
       <find>router-link</find>
+      <find>delimiters</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\yuanzhu\Desktop\webLearn\vue\vueGrammarLearn</dir>
@@ -36,8 +125,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/vue基础知识/1介绍/3.vue循环语句/v-for.html" />
-        <option value="$PROJECT_DIR$/vue基础知识/1介绍/4.vue计算属性/计算属性.html" />
         <option value="$PROJECT_DIR$/vue基础知识/1介绍/5.vue组件化应用构建/构建实例.html" />
         <option value="$PROJECT_DIR$/vue基础知识/3模板语法/v-once.html" />
         <option value="$PROJECT_DIR$/vue基础知识/3模板语法/v-html.html" />
@@ -87,6 +174,8 @@
         <option value="$PROJECT_DIR$/5.API/全局API/Vue.extend.html" />
         <option value="$PROJECT_DIR$/5.API/1全局配置/1全局配置.html" />
         <option value="$PROJECT_DIR$/5.API/全局API/2Vue.nextTick.html" />
+        <option value="$PROJECT_DIR$/1.教程/1.vue基础知识/1介绍/vue组件化应用构建/构建实例.html" />
+        <option value="$PROJECT_DIR$/1.教程/1.vue基础知识/3模板语法/vue实例之delimiters.html" />
       </list>
     </option>
   </component>
@@ -112,6 +201,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -122,13 +212,118 @@
             <path>
               <item name="vueGrammarLearn" type="b2602c69:ProjectViewProjectNode" />
               <item name="vueGrammarLearn" type="462c0819:PsiDirectoryNode" />
+              <item name="1.教程" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vueGrammarLearn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vueGrammarLearn" type="462c0819:PsiDirectoryNode" />
+              <item name="1.教程" type="462c0819:PsiDirectoryNode" />
+              <item name="1.vue基础知识" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vueGrammarLearn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vueGrammarLearn" type="462c0819:PsiDirectoryNode" />
+              <item name="1.教程" type="462c0819:PsiDirectoryNode" />
+              <item name="1.vue基础知识" type="462c0819:PsiDirectoryNode" />
+              <item name="1介绍" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vueGrammarLearn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vueGrammarLearn" type="462c0819:PsiDirectoryNode" />
+              <item name="1.教程" type="462c0819:PsiDirectoryNode" />
+              <item name="1.vue基础知识" type="462c0819:PsiDirectoryNode" />
+              <item name="2.Vue实例" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vueGrammarLearn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vueGrammarLearn" type="462c0819:PsiDirectoryNode" />
+              <item name="1.教程" type="462c0819:PsiDirectoryNode" />
+              <item name="1.vue基础知识" type="462c0819:PsiDirectoryNode" />
+              <item name="3模板语法" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vueGrammarLearn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vueGrammarLearn" type="462c0819:PsiDirectoryNode" />
+              <item name="1.教程" type="462c0819:PsiDirectoryNode" />
+              <item name="1.vue基础知识" type="462c0819:PsiDirectoryNode" />
+              <item name="4.计算属性和侦听器" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vueGrammarLearn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vueGrammarLearn" type="462c0819:PsiDirectoryNode" />
+              <item name="1.教程" type="462c0819:PsiDirectoryNode" />
+              <item name="1.vue基础知识" type="462c0819:PsiDirectoryNode" />
+              <item name="5Class与Style绑定" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vueGrammarLearn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vueGrammarLearn" type="462c0819:PsiDirectoryNode" />
+              <item name="1.教程" type="462c0819:PsiDirectoryNode" />
+              <item name="1.vue基础知识" type="462c0819:PsiDirectoryNode" />
+              <item name="6.条件渲染" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vueGrammarLearn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vueGrammarLearn" type="462c0819:PsiDirectoryNode" />
+              <item name="1.教程" type="462c0819:PsiDirectoryNode" />
+              <item name="1.vue基础知识" type="462c0819:PsiDirectoryNode" />
+              <item name="7.列表渲染" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vueGrammarLearn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vueGrammarLearn" type="462c0819:PsiDirectoryNode" />
+              <item name="1.教程" type="462c0819:PsiDirectoryNode" />
+              <item name="2.深入了解组件" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vueGrammarLearn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vueGrammarLearn" type="462c0819:PsiDirectoryNode" />
+              <item name="1.教程" type="462c0819:PsiDirectoryNode" />
+              <item name="4.可复用性组合" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vueGrammarLearn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vueGrammarLearn" type="462c0819:PsiDirectoryNode" />
+              <item name="1.教程" type="462c0819:PsiDirectoryNode" />
+              <item name="5.工具" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vueGrammarLearn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vueGrammarLearn" type="462c0819:PsiDirectoryNode" />
+              <item name="1.教程" type="462c0819:PsiDirectoryNode" />
+              <item name="6.规模化" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vueGrammarLearn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vueGrammarLearn" type="462c0819:PsiDirectoryNode" />
+              <item name="1.教程" type="462c0819:PsiDirectoryNode" />
+              <item name="7.内在" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vueGrammarLearn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vueGrammarLearn" type="462c0819:PsiDirectoryNode" />
+              <item name="2.API" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vueGrammarLearn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vueGrammarLearn" type="462c0819:PsiDirectoryNode" />
+              <item name="2.API" type="462c0819:PsiDirectoryNode" />
+              <item name="1.全局配置" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vueGrammarLearn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vueGrammarLearn" type="462c0819:PsiDirectoryNode" />
+              <item name="3.工具" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vueGrammarLearn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vueGrammarLearn" type="462c0819:PsiDirectoryNode" />
               <item name="4.核心插件" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -200,16 +395,18 @@
       <workItem from="1559266368717" duration="3280000" />
       <workItem from="1567501905384" duration="320000" />
       <workItem from="1567565035078" duration="14000" />
+      <workItem from="1578884826298" duration="701000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81989000" />
+    <option name="totallyTimeSpent" value="82690000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="2514" height="1456" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18181819" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18386568" />
       <window_info id="Structure" order="1" weight="0.24979524" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -275,16 +472,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/1.教程/1.vue基础知识/9.表单输入绑定/select.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/1.教程/1.vue基础知识/9.表单输入绑定/单选按钮.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/1.教程/1.vue基础知识/9.表单输入绑定/输入框.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
@@ -397,28 +584,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/1.教程/1.vue基础知识/2.Vue实例/2.数据与方法.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="30" column="17" lean-forward="true" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/1.教程/1.vue基础知识/2.Vue实例/3.实例生命周期钩子.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="12" column="37" lean-forward="true" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/笔记/Vue" />
     <entry file="file://$PROJECT_DIR$/1.教程/2.深入了解组件/5.动态组件&amp;异步组件/1.在动态组件上使用 keep-alive.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -437,22 +602,6 @@
     <entry file="file://$PROJECT_DIR$/5.API/1全局配置/1全局配置.html" />
     <entry file="file://$PROJECT_DIR$/5.API/全局API/2Vue.nextTick.html" />
     <entry file="file://$PROJECT_DIR$/5.API/全局API/1Vue.extend.html" />
-    <entry file="file://$PROJECT_DIR$/1.教程/1.vue基础知识/3模板语法/vue模板语法.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/1.教程/1.vue基础知识/3模板语法/v-once.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/1.教程/1.vue基础知识/3模板语法/v-html.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/1.教程/1.vue基础知识/3模板语法/v-bind.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/1.教程/1.vue基础知识/3模板语法/修饰符.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -465,11 +614,65 @@
     <entry file="file://$PROJECT_DIR$/1.教程/1.vue基础知识/.idea/vue自学.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="288">
+            <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1.教程/1.vue基础知识/2.Vue实例/2.数据与方法.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="30" column="17" lean-forward="true" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1.教程/1.vue基础知识/2.Vue实例/3.实例生命周期钩子.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="12" column="37" lean-forward="true" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/1.教程/1.vue基础知识/1介绍/vue组件化应用构建/构建实例.html">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/1.教程/1.vue基础知识/1介绍/vue简介.html">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1.教程/1.vue基础知识/3模板语法/v-bind.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1.教程/1.vue基础知识/3模板语法/v-html.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1.教程/1.vue基础知识/3模板语法/vue模板语法.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1.教程/1.vue基础知识/3模板语法/v-once.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2.API/1.全局配置/7.选项组合.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1.教程/1.vue基础知识/3模板语法/vue实例之delimiters.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
