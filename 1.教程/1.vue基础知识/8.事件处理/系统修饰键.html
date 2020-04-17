@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../../vue.js"></script>
+    可以用如下修饰符来实现仅在按下相应按键时才触发鼠标或键盘事件的监听器
+</head>
+
+<body>
+    <!-- Alt + C -->
+    <input v-on:keyup.alt.67="clear">
+
+    <!-- Ctrl + Click -->
+    <div v-on:click.ctrl="doSomething">Do something</div>
+</body>
+
+</html>
