@@ -25,17 +25,17 @@
 <body>
     <div id="app">
         我们可以为 v-bind:class 设置一个对象，从而动态的切换 class
-        <!--<div v-bind:class="{active:isActive}"></div>-->
+        <div v-bind:class="{active:isActive}"></div>
 
         我们也可以在对象中传入更多属性用来动态切换多个 class 。
-        <!--<div v-bind:class="{active:isActive,danger:hasError}"></div>-->
+        <div v-bind:class="{active:isActive,danger:hasError}"></div>
 
         我们可以把一个数组传给 v-bind:class，以应用一个 class 列表：
-        <!--<div v-bind:class="[active, danger]"></div>-->
-        <!--<div v-bind:class="[isActive ? active : '', errorClass]"></div>-->
+        <div v-bind:class="[active, danger]"></div>
+        <div v-bind:class="[isActive ? active : '', errorClass]"></div>
 
         我们也可以直接绑定数据里的一个对象：
-        <!--<div v-bind:class="obj"></div>-->
+        <div v-bind:class="obj"></div>
 
         我们也可以在这里绑定返回对象的计算属性。这是一个常用且强大的模式：
         <div v-bind:class="classObject"></div>
