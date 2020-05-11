@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="../../vue.js"></script>
+    <script src="../../../vue.js"></script>
 </head>
 
 <body>
@@ -15,7 +15,7 @@
     一个不带 name 的 slot 出口会带有隐含的名字“default”。
     在向具名插槽提供内容的时候，我们可以在一个 template 元素上使用 v-slot 指令(旧版本使用slot='')，并以 v-slot 的参数的形式提供其名称：
 
-
+    注意v-slot只能添加在<template>上(除非被提供的内容只有默认插槽时,组件的标签才可以被当做插槽的模板来使用),
     <div id='app'>
         <base-layout>
             <template v-slot:header>

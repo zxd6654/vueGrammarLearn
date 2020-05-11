@@ -11,19 +11,18 @@
 
 <body>
     有时候让插槽的内容能够访问子组件中才有的数据是很有用的
-
     绑定在 <slot> 元素上的特性被称为插槽 prop。
-
         v-slot:default='slotProps' 缩写:v-slot="slotProps" 不能和具名插槽混用
-
         解构插槽 Prop v-slot="{ user }"
+        只要出现多个插槽,请始终为所有的插槽使用完整的基于template的语法
+
+        解构插槽Prop
 
         <div id='app'>
             <current-user v-slot:default='slotProps'>
                 {{slotProps.user.firstName}}
             </current-user>
         </div>
-
         <script>
             Vue.component('current-user', {
                 data() {
@@ -34,13 +33,13 @@
                     }
                 },
                 template: `
-           <span><slot v-bind:user='user'>{{user.firstName}}</slot></span>`
+                <span><slot v-bind:user='user'>{{user.firstName}}</slot></span>`
             });
 
             new Vue({
                 el: '#app'
             })
         </script>
-</body>
+    </body>
 
-</html>
+    </html>
