@@ -2,8 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ec2f8d6-ee07-4a54-a70c-808e53e87d7f" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/1.教程/4.可复用性组合/3.渲染函数JSX/2.节点、树以及虚拟 DOM.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1.教程/4.可复用性组合/3.渲染函数JSX/3.createElement参数.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1.教程/4.可复用性组合/3.渲染函数JSX/4.使用 JavaScript 代替模板功能.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1.教程/4.可复用性组合/3.渲染函数JSX/5.JSX.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1.教程/4.可复用性组合/3.渲染函数JSX/6.函数式组件.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1.教程/2.深入了解组件/3.自定义事件/1.自定义组件的 v-model.html" beforeDir="false" afterPath="$PROJECT_DIR$/1.教程/2.深入了解组件/3.自定义事件/1.自定义组件的 v-model.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.教程/1.vue基础知识/5Class与Style绑定/class.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.教程/1.vue基础知识/5Class与Style绑定/style.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.教程/2.深入了解组件/4.插槽/6.具名插槽的缩写.html" beforeDir="false" afterPath="$PROJECT_DIR$/1.教程/2.深入了解组件/4.插槽/6.具名插槽的缩写.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.教程/3.过度&amp;动画/1.单元素/组件的过渡.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.教程/4.可复用性组合/3.渲染函数JSX/1.基础.html" beforeDir="false" afterPath="$PROJECT_DIR$/1.教程/4.可复用性组合/3.渲染函数JSX/1.基础.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2.API/1.全局配置/9.实例属性.html" beforeDir="false" afterPath="$PROJECT_DIR$/2.API/1.全局配置/9.实例属性.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,28 +50,30 @@
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
     <exe-path />
-    <annotation-enable>false</annotation-enable>
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectId" id="1ZeJKpvnhHJgRRByF1EehtxlJce" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../vueProject" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -134,6 +146,9 @@
       <workItem from="1587115063071" duration="13000" />
       <workItem from="1588728070962" duration="7000" />
       <workItem from="1589015297817" duration="1655000" />
+      <workItem from="1590455565338" duration="1635000" />
+      <workItem from="1590479282956" duration="1097000" />
+      <workItem from="1590482118346" duration="261000" />
     </task>
     <servers />
   </component>
@@ -166,5 +181,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
