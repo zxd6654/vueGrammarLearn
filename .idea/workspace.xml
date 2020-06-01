@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ec2f8d6-ee07-4a54-a70c-808e53e87d7f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/1.教程/1.vue基础知识/3模板语法/1插值.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1.教程/1.vue基础知识/3模板语法/2指令.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1.教程/4.可复用性组合/2.自定义指令/3.钩子函数参数.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1.教程/1.vue基础知识/3模板语法/v-once.html" beforeDir="false" afterPath="$PROJECT_DIR$/1.教程/1.vue基础知识/3模板语法/v-once.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1.教程/1.vue基础知识/3模板语法/vue模板语法.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.教程/4.可复用性组合/5.过滤器/1.过滤器.html" beforeDir="false" afterPath="$PROJECT_DIR$/1.教程/4.可复用性组合/5.过滤器/1.过滤器.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +128,7 @@
       <workItem from="1590479282956" duration="1097000" />
       <workItem from="1590482118346" duration="261000" />
       <workItem from="1590483567483" duration="515000" />
-      <workItem from="1590977131853" duration="4535000" />
+      <workItem from="1590977131853" duration="8454000" />
     </task>
     <servers />
   </component>
