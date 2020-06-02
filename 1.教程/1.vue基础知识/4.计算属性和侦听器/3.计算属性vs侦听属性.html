@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="../../vue.js"></script>
+    <script src="../../../vue.js"></script>
 </head>
 <body>
 <!--代码是命令式且重复的  计算属性更好-->
 <div id="app">
-<p>{{fullName3}}</p>
+    <p>{{fullName3}}</p>
 </div>
 <script>
     var app = new Vue({
@@ -20,10 +20,10 @@
         },
         watch: {
             firstName: function (val) {
-                this.fullName3 = val +" "+ this.lastName3;
+                this.fullName3 = val + " " + this.lastName2;
             },
             lastName: function (val) {
-                this.fullName3 = this.firstName2 + ' ' + val
+                this.fullName3 = this.firstName1 + ' ' + val
             }
         }
     })
