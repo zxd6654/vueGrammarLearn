@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+在2.2.0+版本里,当在组件上使用v-for时,key现在是必须的
+<my-component
+        v-for="(item, index) in items"
+        v-bind:item="item"
+        v-bind:index="index"
+        v-bind:key="item.id"
+></my-component>
+</body>
+</html>

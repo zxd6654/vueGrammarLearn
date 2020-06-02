@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ec2f8d6-ee07-4a54-a70c-808e53e87d7f" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/1.教程/1.vue基础知识/7.列表渲染/在 template上使用v-for.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1.教程/1.vue基础知识/7.列表渲染/在组件上使用v-for.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1.教程/1.vue基础知识/7.列表渲染/显示过滤排序后的结果.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1.教程/1.vue基础知识/4.计算属性和侦听器/1.计算属性.html" beforeDir="false" afterPath="$PROJECT_DIR$/1.教程/1.vue基础知识/4.计算属性和侦听器/1.计算属性.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1.教程/1.vue基础知识/4.计算属性和侦听器/2.计算属性缓存vs方法.html" beforeDir="false" afterPath="$PROJECT_DIR$/1.教程/1.vue基础知识/4.计算属性和侦听器/2.计算属性缓存vs方法.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1.教程/1.vue基础知识/4.计算属性和侦听器/3.计算属性vs侦听属性.html" beforeDir="false" afterPath="$PROJECT_DIR$/1.教程/1.vue基础知识/4.计算属性和侦听器/3.计算属性vs侦听属性.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1.教程/1.vue基础知识/4.计算属性和侦听器/4.计算属性的setter.html" beforeDir="false" afterPath="$PROJECT_DIR$/1.教程/1.vue基础知识/4.计算属性和侦听器/4.计算属性的setter.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1.教程/1.vue基础知识/4.计算属性和侦听器/5.侦听器.html" beforeDir="false" afterPath="$PROJECT_DIR$/1.教程/1.vue基础知识/4.计算属性和侦听器/5.侦听器.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1.教程/1.vue基础知识/5.Class与Style绑定/class.html" beforeDir="false" afterPath="$PROJECT_DIR$/1.教程/1.vue基础知识/5.Class与Style绑定/class.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1.教程/1.vue基础知识/5.Class与Style绑定/style.html" beforeDir="false" afterPath="$PROJECT_DIR$/1.教程/1.vue基础知识/5.Class与Style绑定/style.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.教程/1.vue基础知识/6.条件渲染/1.vue条件语句/v-else-if.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.教程/1.vue基础知识/6.条件渲染/1.vue条件语句/v-else.html" beforeDir="false" afterPath="$PROJECT_DIR$/1.教程/1.vue基础知识/6.条件渲染/v-if.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.教程/1.vue基础知识/6.条件渲染/1.vue条件语句/v-show.html" beforeDir="false" afterPath="$PROJECT_DIR$/1.教程/1.vue基础知识/6.条件渲染/v-show.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.教程/1.vue基础知识/6.条件渲染/1.vue条件语句/v-show例子.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.教程/1.vue基础知识/6.条件渲染/1.vue条件语句/vue条件语句.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.教程/1.vue基础知识/7.列表渲染/v-for.html" beforeDir="false" afterPath="$PROJECT_DIR$/1.教程/1.vue基础知识/7.列表渲染/v-for.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,16 +73,16 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\yuanzhu\Desktop\webLearn\vue\vueGrammarLearn\vue基础知识" />
-      <recent name="C:\Users\yuanzhu\Desktop\webLearn\vue\vueGrammarLearn" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\webLearn\vue\myselfVue\vueGrammarLearn\1.教程\1.vue基础知识\6.条件渲染" />
       <recent name="C:\Users\yuanzhu\Desktop\webLearn\vue\myselfVue\vueGrammarLearn\3.工具" />
       <recent name="C:\Users\yuanzhu\Desktop\webLearn\vue\myselfVue\vueGrammarLearn\1.教程" />
       <recent name="C:\Users\yuanzhu\Desktop\webLearn\vue\myselfVue\vueGrammarLearn\5.API\1全局配置" />
       <recent name="C:\Users\yuanzhu\Desktop\webLearn\vue\myselfVue\vueGrammarLearn\Vue官网基础知识" />
-      <recent name="C:\Users\yuanzhu\Desktop\webLearn\vue\vueGrammarLearn\2.深入了解组件\3.自定义事件" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\yuanzhu\Desktop\webLearn\vue\vueGrammarLearn\vue基础知识" />
+      <recent name="C:\Users\yuanzhu\Desktop\webLearn\vue\vueGrammarLearn" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -134,7 +136,7 @@
       <workItem from="1590482118346" duration="261000" />
       <workItem from="1590483567483" duration="515000" />
       <workItem from="1590977131853" duration="9810000" />
-      <workItem from="1591060149527" duration="6276000" />
+      <workItem from="1591060149527" duration="9913000" />
     </task>
     <servers />
   </component>
