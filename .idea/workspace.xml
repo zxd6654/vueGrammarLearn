@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ec2f8d6-ee07-4a54-a70c-808e53e87d7f" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/1.教程/1.vue基础知识/9.表单输入绑定/1基础用法.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1.教程/1.vue基础知识/9.表单输入绑定/2绑定值.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1.教程/1.vue基础知识/8.事件处理/事件修饰符.html" beforeDir="false" afterPath="$PROJECT_DIR$/1.教程/1.vue基础知识/8.事件处理/4事件修饰符.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1.教程/1.vue基础知识/8.事件处理/事件处理器.html" beforeDir="false" afterPath="$PROJECT_DIR$/1.教程/1.vue基础知识/8.事件处理/1监听事件.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1.教程/1.vue基础知识/8.事件处理/事件处理程序2.html" beforeDir="false" afterPath="$PROJECT_DIR$/1.教程/1.vue基础知识/8.事件处理/2事件处理方法.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1.教程/1.vue基础知识/8.事件处理/事件处理程序3.html" beforeDir="false" afterPath="$PROJECT_DIR$/1.教程/1.vue基础知识/8.事件处理/3内联处理器的方法.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1.教程/1.vue基础知识/8.事件处理/按键修饰符.html" beforeDir="false" afterPath="$PROJECT_DIR$/1.教程/1.vue基础知识/8.事件处理/5按键修饰符.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1.教程/1.vue基础知识/8.事件处理/系统修饰键.html" beforeDir="false" afterPath="$PROJECT_DIR$/1.教程/1.vue基础知识/8.事件处理/6系统修饰键.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.教程/1.vue基础知识/9.表单输入绑定/select.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.教程/1.vue基础知识/9.表单输入绑定/修饰符.html" beforeDir="false" afterPath="$PROJECT_DIR$/1.教程/1.vue基础知识/9.表单输入绑定/3修饰符.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.教程/1.vue基础知识/9.表单输入绑定/单选按钮.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.教程/1.vue基础知识/9.表单输入绑定/复选框.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.教程/1.vue基础知识/9.表单输入绑定/表单1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.教程/1.vue基础知识/9.表单输入绑定/输入框.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +136,7 @@
       <workItem from="1590483567483" duration="515000" />
       <workItem from="1590977131853" duration="9810000" />
       <workItem from="1591060149527" duration="11475000" />
-      <workItem from="1591144844072" duration="4765000" />
+      <workItem from="1591144844072" duration="8023000" />
     </task>
     <servers />
   </component>
