@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="../../vue.js"></script>
+    <script src="../../../vue.js"></script>
     <style>
         .tab-button {
             padding: 6px 10px;
@@ -39,8 +39,7 @@
 
 currentTabComponent 可以包括
 
-已注册组件的名字，或
-一个组件的选项对象
+已注册组件的名字，或 一个组件的选项对象
 
 示例:
 <div id="dynamic-component-demo" class="demo">
@@ -48,6 +47,11 @@ currentTabComponent 可以包括
         v-on:click="currentTab = tab">{{ tab }}</button>
 
     <component v-bind:is="currentTabComponent" class="tab"></component>
+
+    //
+    <table>
+        <tab-home></tab-home>
+    </table>
 </div>
 
 <script>

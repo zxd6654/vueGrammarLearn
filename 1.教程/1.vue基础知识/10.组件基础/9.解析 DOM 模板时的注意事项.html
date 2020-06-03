@@ -1,14 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <script src="../../vue.js"></script>
-    <!--有些 HTML 元素，诸如 <ul>、<ol>、<table> 和 <select>，
-    对于哪些元素可以出现在其内部是有严格限制的。而有些元素，
-    诸如 <li>、<tr> 和 <option>，只能出现在其它某些特定的元素内部。-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../../vue.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            border: 1px solid red;
+            width: 300px;
+            height: 200px;
+        }
+
+        .content {
+            border: 1px solid blue;
+        }
+    </style>
+<!--    有些 HTML 元素，诸如 <ul>、<ol>、<table> 和 <select>，对于哪些元素可以出现在其内部是有严格限制的。而有些元素，
+         诸如 <li>、<tr> 和 <option>，只能出现在其它某些特定的元素内部。-->
 </head>
+
+示例:
+<div id="dynamic-component-demo" class="demo">
+    <table>
+        <tab-home></tab-home>
+    </table>
+    <br>
+    <table>
+        <tr is="tab-home"></tr>
+    </table>
+</div>
+
+<script>
+    Vue.component('tab-home', {
+        template: '<div class="content">Home component</div>'
+    })
+
+    new Vue({
+        el: '#dynamic-component-demo',
+    })
+</script>
+
 <body>
 
 </body>
+
 </html>
