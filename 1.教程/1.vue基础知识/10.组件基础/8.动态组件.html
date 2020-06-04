@@ -47,11 +47,6 @@ currentTabComponent 可以包括
         v-on:click="currentTab = tab">{{ tab }}</button>
 
     <component v-bind:is="currentTabComponent" class="tab"></component>
-
-    //
-    <table>
-        <tab-home></tab-home>
-    </table>
 </div>
 
 <script>
