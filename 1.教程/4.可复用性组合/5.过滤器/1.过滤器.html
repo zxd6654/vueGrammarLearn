@@ -12,6 +12,8 @@ Vue.js 允许你自定义过滤器，可被用于一些常见的文本格式化�
 <!-- 在双花括号中 -->
 <div id="app">
     <div>{{ message | capitalize }}</div>
+    <div>{{ message | filterA | filterB }}</div>
+    <div>{{ message | filterA('arg1', arg2) }}</div>
 </div>
 
 <!-- 在 `v-bind` 中 -->
@@ -24,7 +26,7 @@ Vue.js 允许你自定义过滤器，可被用于一些常见的文本格式化�
         filters: {
             capitalize: function (value) {
                 if (!value) return ''
-                value = value.toString()
+                value = value.toString()  //将一个逻辑值转化为字符串
                 return value.charAt(0).toUpperCase() + value.slice(1)
             }
         },
