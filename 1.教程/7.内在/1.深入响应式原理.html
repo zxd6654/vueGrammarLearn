@@ -18,6 +18,7 @@ getter/setter。Object.defineProperty 是 ES5 中一个无法 shim 的特性，�
 
 
 2检测变化的注意事项:
+由于 JavaScript 的限制，Vue 不能检测数组和对象的变化
 
 Vue 无法检测到对象属性的添加或删除。由于 Vue 会在初始化实例时对属性执行 getter/setter 转化，
 所以属性必须在 data 对象上存在才能让 Vue 将它转换为响应式的。
