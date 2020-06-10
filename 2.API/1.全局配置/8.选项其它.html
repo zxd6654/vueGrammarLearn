@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../vue.js"></script>
+    name
+    只有作为组件选项时起作用
+    允许组件模板递归调用自身
+
+    delimiters   array
+    改变纯文本插入分隔符
+
+    functional   boolean
+    使组件无状态和无实例,他们用一个简单的render函数返回虚拟节点使他们渲染的代价更小
+
+    model   { prop?: string, event?: string }
+    允许一个自定义组件在使用v-model时定制prop和event
+
+    inheritAttrs   boolean
+    为false时,组件传递的默认行为不会应用到组件的根元素上
+
+    comments  boolean
+    当设为 true 时，将会保留且渲染模板中的 HTML 注释。默认行为是舍弃它们。
+</head>
+<body>
+<div id="app">
+    <span>
+        ${message}
+    </span>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            message: 'hello world!'
+        },
+        delimiters: ['${', '}']
+    })
+</script>
+</body>
+</html>

@@ -13,12 +13,14 @@
     组件的定义只接受 function。
     a Vue 实例的数据对象。Vue 将会递归将 data 的属性转换为 getter/setter，从而让 data 的属性能够响应数据变化。
     b 一旦观察过，不需要再次在数据对象上添加响应式属性。因此推荐在创建实例之前，就声明所有的根级响应式属性。
-    c 如果需要，可以通过将 vm.$data 传入 JSON.parse(JSON.stringify(...)) 得到深拷贝的原始数据对象。
+    c 以 _ 或 $ 开头的 property 不会被 Vue 实例代理，因为它们可能和 Vue 内置的 property、API 方法冲突。你可以使用例如 vm.$data._property 的方式访问这些 property。
+    d 如果需要，可以通过将 vm.$data 传入 JSON.parse(JSON.stringify(...)) 得到深拷贝的原始数据对象。
 
     *2 props
     props 可以是数组或对象，用于接收来自父组件的数据。
 
     3 propsData
+    只用于 new 创建的实例中
     创建实例时传递 props。主要作用是方便测试。
 
     *4 computed
