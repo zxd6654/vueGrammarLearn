@@ -9,26 +9,44 @@
 </head>
 
 <body>
-    定义路由的时候可以配置 meta 字段：
+定义路由的时候可以配置 meta 字段：
 
-    那么如何访问这个 meta 字段呢？ $route.matched 数组
+那么如何访问这个 meta 字段呢？ $route.matched 数组
 
-    <script>
-        const router = new VueRouter({
-            routes: [{
-                path: '/foo',
-                component: Foo,
-                children: [{
-                    path: 'bar',
-                    component: Bar,
-                    // a meta field
-                    meta: {
-                        requiresAuth: true
-                    }
-                }]
+<script>
+    const router = new VueRouter({
+        routes: [{
+            path: '/foo',
+            component: Foo,
+            children: [{
+                path: 'bar',
+                component: Bar,
+                // a meta field
+                meta: {
+                    requiresAuth: true
+                }
             }]
-        })
-    </script>
+        }]
+    })
+
+    //登录验证
+    router.beforeEach((to, from, next) => {
+        if (to.matched.some(record => record.meta.requiresAuth)) {
+            if (!auth.loggedIn()) {
+                next({
+                    path: 'login',
+                    query: {
+                        redirect: to.fullPath
+                    }
+                })
+            } else {
+                next();
+            }
+        } else {
+            next();
+        }
+    })
+</script>
 </body>
 
 </html>
