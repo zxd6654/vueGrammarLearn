@@ -6,32 +6,105 @@
     <meta name="viewport" content="width= , initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="../../vue.js"></script>
+    <script src="../../vuex.js"></script>
 </head>
 
 <body>
-    Action 类似于 mutation，不同在于：
+Action 类似于 mutation，不同在于：
 
-    Action 提交的是 mutation，而不是直接变更状态。
-    Action 可以包含任意异步操作。
-    <script>
-        const store = new Vuex.Store({
-            state: {
-                count: 0
-            },
-            mutations: {
-                increment(state) {
-                    state.count++
-                }
-            },
-            actions: {
-                increment(context) {
-                    context.commit('increment')
-                }
+Action 提交的是 mutation，而不是直接变更状态。
+Action 可以包含任意异步操作。
+<script>
+    const store = new Vuex.Store({
+        state: {
+            count: 0
+        },
+        mutations: {
+            increment(state) {
+                state.count++
             }
-        })
-    </script>
+        },
+        actions: {
+            increment(context) {
+                context.commit('increment')
+            }
+        }
+    })
+</script>
 
-    触发调用: store.dispatch('increment')
+触发调用: store.dispatch('increment')
+
+支持载荷方式和对象方式进行分发
+<script>
+    store.dispatch('a', {
+        a: 10,
+    });
+    store.dispatch({
+        type: 'a',
+        a: 10,
+    })
+
+</script>
+
+在组件中分发 Action
+<script>
+    new Vue({
+        methods: {
+            ...mapActions([
+                'increment', // 将 `this.increment()` 映射为 `this.$store.dispatch('increment')`
+
+                // `mapActions` 也支持载荷：
+                'incrementBy' // 将 `this.incrementBy(amount)` 映射为 `this.$store.dispatch('incrementBy', amount)`
+            ]),
+            ...mapActions({
+                add: 'increment' // 将 `this.add()` 映射为 `this.$store.dispatch('increment')`
+            })
+        }
+    })
+</script>
+
+
+组合Action
+你需要明白 store.dispatch 可以处理被触发的 action 的处理函数返回的 Promise，并且 store.dispatch 仍旧返回 Promise
+<script>
+    let store = new Vuex.store({
+        actions: {
+            actionA({commit}) {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        commit('s');
+                        resolve();
+                    }, 1000);
+                })
+            },
+            actionB({dispatch, commit}) {
+                return dispatch('actionA').then(() => {
+                    commit('ss');
+                })
+            }
+        }
+    });
+
+    store.dispatch('actionA').then(() => {
+
+    });
+</script>
+
+利用async/await
+<script>
+    let store = new Vuex.store({
+        actions: {
+            async actionA({commit}) {
+                commit('gotData', await getData())
+            },
+            async actionB({dispatch, commit}) {
+                await dispatch('actionA')//等待actionA完成
+                commit('gotOtherData', await getOtherData());
+            }
+        }
+    });
+</script>
 </body>
 
 </html>
