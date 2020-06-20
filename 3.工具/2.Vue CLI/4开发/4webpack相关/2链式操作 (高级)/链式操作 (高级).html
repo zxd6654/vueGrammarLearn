@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Vue CLI 内部的 webpack 配置是通过 webpack-chain 维护的。
+这个库提供了一个 webpack 原始配置的上层抽象，使其可以定义具名的 loader 规则和具名插件，
+并有机会在后期进入这些规则并对它们的选项进行修改。
+
+它允许我们更细粒度的控制其内部配置。
+
+1修改loader选项
+<script>
+    module.exports = {
+        chainWebpack: config => {
+            config.module
+                .rule('vue')
+                .use('vue-loader')
+                .loader('vue-loader')
+                .tap(options => {
+                    options.compilerOptions.whitespace = 'condense';
+                    return options;
+                })
+        }
+    }
+</script>
+对于 CSS 相关 loader 来说，我们推荐使用 css.loaderOptions 而不是直接链式指定 loader。
+这是因为每种 CSS 文件类型都有多个规则，而 css.loaderOptions 可以确保你通过一个地方影响所有的规则。
+
+2添加一个新的Loader
+<script>
+    module.exports = {
+        chainWebpack: config => {
+            config.module
+                .rule('graphql')
+            test('/\.graphql$/')
+                .use('graphql-tag/loader')
+                .loader('graphql-tag/loader')
+                .end()
+                //你还可以再次添加一个loader
+                .use('other-loader')
+                .loader('other-loader')
+                .end()
+        }
+    }
+</script>
+
+3替换一个规则里的loader
+如果你想要替换一个已有的基础 loader，例如为内联的 SVG 文件使用 vue-svg-loader 而不是加载这个文件
+<script>
+    module.exports = {
+        chainWebpack: config => {
+            const svgRule = config.module.rule('svg');
+
+            // 清除已有的所有 loader。
+            // 如果你不这样做，接下来的 loader 会附加在该规则现有的 loader 之后
+            svgRule.use.clear();
+
+            //添加替换的loader
+            svgRule
+                .use('vue-svg-loader')
+                .loader('vue-svg-loader')
+        }
+    }
+</script>
+
+4修改插件选项
+<script>
+    module.exports={
+        chainWebpack:config=>{
+            config
+            .plugin('html')
+            .tap(args=>{
+                args[0].template = '/Users/username/proj/app/templates/index.html'
+                return args
+            })
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+处理静态资源
+1 在JavaScript 被导入或在 template/CSS 中通过相对路径被引用。这类引用会被 webpack 处理。
+2 放置在 public 目录下或通过绝对路径被引用。这类资源将会直接被拷贝，而不会经过 webpack 的处理
+
+从相对路劲导入
+使用相对路径 (必须以 . 开头)
+例如
+<img src="./image.png"> => h('img', { attrs: { src: require('./image.png') }})
+
+URL转换规则
+1 如果URL是一个绝对路径(/images/foo.png),它将会被保留不变
+2 如果 URL 以 . 开头，它会作为一个相对模块请求被解释且基于你的文件系统中的目录结构进行解析
+3 如果 URL 以 ~ 开头，其后的任何内容都会作为一个模块请求被解析,这意味着你甚至可以引用 Node 模块中的资源：
+4 如果 URL 以 @ 开头，它也会作为一个模块请求被解析。它的用处在于 Vue CLI 默认会设置一个指向 projectRoot>/src 的别名 @。(仅作用于模版中)
+
+public文件夹
+任何防止在public文件夹的静态资源都会被简单的复制,而不经过webpack,你需要通过绝对路径来引用他们
+
+public 目录提供的是一个应急手段，当你通过绝对路径引用它时，留意应用将会部署到哪里。
+如果你的应用没有部署在域名的根部，那么你需要为你的 URL 配置 publicPath 前缀
+1 在 public/index.html 或其它通过 html-webpack-plugin 用作模板的 HTML 文件中，你需要通过<%=BASE_URL %>设置链接前缀
+
+何时使用 public 文件夹
+你需要在构建输出中指定一个文件的名字。
+你有上千个图片，需要动态引用它们的路径。
+有些库可能和 webpack 不兼容，这时你除了将其用一个独立的 script> 标签引入没有别的选择。
+</body>
+</html>
