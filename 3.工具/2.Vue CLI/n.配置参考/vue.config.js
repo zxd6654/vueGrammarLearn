@@ -1,15 +1,15 @@
 /*
- * @Author: zxd 
- * @Date: 2019-09-16 11:24:16 
+ * @Author: zxd
+ * @Date: 2019-09-16 11:24:16
  * @Last Modified by: zxd
  * @Last Modified time: 2019-09-16 17:04:12
  */
 
 //vue.config.js是一个可选的配置文件,如果项目的根目录中存在这个文件,那么他会被@vue/cli-service自动加载 也可以使用package.json中的vue字段
-// 详情参考 https://cli.vuejs.org/zh/config/#%E5%85%A8%E5%B1%80-cli-%E9%85%8D%E7%BD%AE
+// 详情参考 https://cli.vuejs.org/zh/config/
 module.exports = {
 
-    publicPath: '/', //部署应用时的基本URL,在开发环境下依然生效
+    publicPath: '/', //部署应用时的基本URL,在开发环境下依然生效 这个值也可以被设置为空字符串 ('') 或是相对路径 ('./')，这样所有的资源都会被链接为相对路径，这样打出来的包可以被部署在任意路径
 
     outputDir: 'dist', //当运行build时生成的生产环境构建文件的目录,
 
@@ -22,20 +22,23 @@ module.exports = {
     pages: { //在 multi-page 模式下构建应用。默认是undefined
         index: {
             // 入口文件
-            entry: 'src/main.js',
-            /*这个是根入口文件*/
-            // 模板文件
+            entry: 'src/index/main.js',
+            // 模板来源
             template: 'public/index.html',
-            // 输出文件
+            // 在 dist/index.html 的输出
             filename: 'index.html',
-            // 页面title
-            title: 'Index Page'
+            // 当使用 title 选项时，
+            // template 中的 title 标签需要是 <title><%= htmlWebpackPlugin.options.title %></title>
+            title: 'Index Page',
+            // 在这个页面中包含的块，默认情况下会包含
+            // 提取出来的通用 chunk 和 vendor chunk。
+            chunks: ['chunk-vendors', 'chunk-common', 'index']
         },
-        // 简写格式
-        // 模板文件默认是 `public/subpage.html`
-        // 如果不存在，就是 `public/index.html`.
-        // 输出文件默认是 `subpage.html`.
-        subpage: 'src/main.js' /*注意这个是*/
+        // 当使用只有入口的字符串格式时，
+        // 模板会被推导为 `public/subpage.html`
+        // 并且如果找不到的话，就回退到 `public/index.html`。
+        // 输出文件名会被推导为 `subpage.html`。
+        subpage: 'src/subpage/main.js'
     },
 
     lintOnSave: true, //是否在开发环境下通过eslint-loader在每次保存时lint代码,当 lintOnSave 是一个 truthy 的值时，eslint-loader 在开发和生产构建下都会被启用。
@@ -56,9 +59,11 @@ module.exports = {
 
     css: {
 
-        modules: false, //默认情况下，只有 *.module.[ext] 结尾的文件才会被视作 CSS Modules 模块。设置为 true 后你就可以去掉文件名中的 .module 并将所有的 *.(css|scss|sass|less|styl(us)?) 文件视为 CSS Modules 模块。
+        modules: false, //v4已经弃用
 
-        extract: process.env.NODE_ENV === 'production' ? true : false, //生产环境下是 true，开发环境下是 false   是否将组件中的 CSS 提取至一个独立的 CSS 文件中 
+        requireModuleExtension:true,//默认情况下，只有 *.module.[ext] 结尾的文件才会被视作 CSS Modules 模块。设置为 true 后你就可以去掉文件名中的 .module 并将所有的 *.(css|scss|sass|less|styl(us)?) 文件视为 CSS Modules 模块。
+
+        extract: process.env.NODE_ENV === 'production' ? true : false, //生产环境下是 true，开发环境下是 false   是否将组件中的 CSS 提取至一个独立的 CSS 文件中
 
         sourceMap: false, //是否为 CSS 开启 source map。设置为 true 之后可能会影响构建的性能
 
@@ -102,7 +107,6 @@ module.exports = {
 
         before: app => {}, //提供在服务器内部的所有其他中间件之前执行自定义中间件的能力。
     },
-
 
     parallel: require('os').cpus().length > 1, //是否为 Babel 或 TypeScript 使用 thread-loader。该选项在系统的 CPU 有多于一个内核时自动启用，仅作用于生产构建
 
