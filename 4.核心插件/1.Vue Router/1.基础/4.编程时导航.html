@@ -38,6 +38,18 @@ router.push、 router.replace 和 router.go
             }
         })
     </script>
+
+如果提供了path，params会被忽略，上述例子中的query并不属于这种情况
+取而代之的是下面的例子做法，你需要提供路由的name或者手写完整的带有参数的path
+
+<script>
+    const userId='123';
+    router.push({name:'user',params:{userId}})
+    router.push({path:`/user/${userId}`})
+
+</script>
+
+
 </body>
 
 </html>
