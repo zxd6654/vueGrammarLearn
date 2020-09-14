@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    如果指令需要多个值，可以传入一个 JavaScript 对象字面量。记住，指令函数能够接受所有合法的 JavaScript 表达式。
+    <div v-demo="{ color: 'white', text: 'hello!' }"></div>
+    <script>
+        Vue.directive('demo', function (el, binding) {
+            console.log(binding.value.color) // => "white"
+            console.log(binding.value.text)  // => "hello!"
+        })
+    </script>
+</body>
+
+</html>
