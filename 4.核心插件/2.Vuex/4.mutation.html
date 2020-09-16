@@ -64,6 +64,8 @@ devtools 不知道什么时候回调函数实际上被调用——实质上任�
 
 
 在组件中提交Mutation
+你可以在组件中使用 this.$store.commit('xxx') 提交 mutation，
+或者使用 mapMutations 辅助函数将组件中的 methods 映射为 store.commit 调用（需要在根节点注入 store）。
 <script>
     new Vue({
         methods: {

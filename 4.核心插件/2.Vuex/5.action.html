@@ -48,6 +48,8 @@ Action 可以包含任意异步操作。
 </script>
 
 在组件中分发 Action
+你在组件中使用 this.$store.dispatch('xxx') 分发 action，
+或者使用 mapActions 辅助函数将组件的 methods 映射为 store.dispatch 调用（需要先在根节点注入 store）：
 <script>
     new Vue({
         methods: {
