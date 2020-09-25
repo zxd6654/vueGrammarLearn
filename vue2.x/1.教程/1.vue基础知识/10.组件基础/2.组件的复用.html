@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../../../vue.js"></script>
+</head>
+
+<body>
+    可以将组件进行任意次数的复用
+    注意当点击按钮时，每个组件都会各自独立维护它的 count。因为你每用一次组件，就会有一个它的新实例被创建。
+
+    data必须是一个函数
+    当定义一个组件时,他的data并不是一个对象
+    一个组件的data选项必须是一个函数,因此每个实例可以维护一份被返回对象的独立的拷贝
+    如果没有这条规则,其中一个实例的改变就会影响到其他的所有实例
+    <div id="components-demo">
+        <button-counter></button-counter>
+        <button-counter></button-counter>
+        <button-counter></button-counter>
+    </div>
+    <script>
+        Vue.component('button-counter', {
+            data: function () {       //data 必须是一个函数,因此每个实例可以维护一份被返回对象的独立的拷贝
+                return {
+                    count: 0
+                }
+            },
+            template: '<button v-on:click="count++">You clicked me {{count}} times.</button>'
+        });
+        new Vue({ el: '#components-demo' }); //先给Vue类，添加新组件，然后再去实例化使用。
+    </script>
+</body>
+
+</html>

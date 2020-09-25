@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<router-link :to="{ name: 'user', params: { userId: 123 }}">User</router-link>
+
+router.push({ name: 'user', params: { userId: 123 }})
+<script>
+    const router = new VueRouter({
+        routes: [
+            {
+                path: '/user/:userId',
+                name: 'user',
+                component: User
+            }
+        ]
+    })
+</script>
+</body>
+</html>

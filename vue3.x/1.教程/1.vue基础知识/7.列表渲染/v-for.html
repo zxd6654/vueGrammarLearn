@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    循环语句
+    循环使用 v-for 指令。
+    v-for 指令需要以 item in items 形式的特殊语法， items 是源数据数组并且 item 是数组元素迭代的别名
+    你也可以使用of代替in作为分隔符,因为它更接近js迭代器的语法
+    <script src="../../vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="site in sites">{{site.name}}</li>
+    </ul>
+    <ol>
+        <template v-for="site in sites">
+            <li>{{site.name}}</li>
+            <li>小学生之手</li>
+        </template>
+    </ol>
+    <ul>
+        <li v-for="site in object">{{site}}</li>
+    </ul>
+    <ul>
+        <li v-for="(value,key) in object">{{key}}:{{value}}</li> <!--你也可以提供第二个的参数为键名：-->
+    </ul>
+    <ul>
+        <li v-for="(value,key,index) in object">{{index}}.{{key}}:{{value}}</li> <!--第三个参数为索引：-->
+    </ul>
+    <ul>
+        <li v-for="n in 10">{{n}}</li> <!--v-for 也可以循环整数：-->
+    </ul>
+</div>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            sites:[
+                {name:'朱晓东'},
+                {name:'朱晓东'},
+                {name:'朱晓东'}
+            ],
+            object:{
+                name: '菜鸟教程',
+                url: 'http://www.runoob.com',
+                slogan: '学的不仅是技术，更是梦想！'
+            }
+        }
+    })
+</script>
+</body>
+</html>

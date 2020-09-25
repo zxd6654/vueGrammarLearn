@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../../../vue.js"></script>
+</head>
+在组件使用v-model体现了:1父组件向子组件传值,2子组件想父组件传值
+
+<body>
+    在元素上使用v-model(以下两种双向绑定的方法)
+    <div id='demo2'>
+        <input type="text" v-bind:value='searchText' v-on:input='searchText=$event.target.value'>
+        <br>
+        <input type="text" v-model='searchText'>
+    </div>
+    <script>
+        new Vue({
+            el: '#demo2',
+            data: {
+                searchText: '111',
+            }
+        })
+    </script>
+
+    在组件使用v-model
+    <div id="model-demo">
+        <custom-input v-model="searchText"></custom-input>
+    </div>
+    <script>
+        Vue.component('custom-input', {
+            props: ['value'],
+            template: `
+    <input
+      v-bind:value="value"
+      v-on:input="$emit('input', $event.target.value)"
+    >
+  `
+        });
+        new Vue({
+            el: '#model-demo',
+            data: {
+                searchText: 1,
+            },
+        })
+    </script>
+</body>
+
+</html>

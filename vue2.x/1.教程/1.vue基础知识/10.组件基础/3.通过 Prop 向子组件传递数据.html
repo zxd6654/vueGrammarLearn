@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../../../vue.js"></script>
+    父组件向子组件传递数据---props
+
+    Prop 是你可以在组件上注册的一些自定义特性
+
+    一个组件默认可以拥有任意数量的 prop，任何值都可以传递给任何 prop。
+    在上述模板中，你会发现我们能够在组件实例中访问这个值，就像访问 data 中的值一样。
+
+    如果是静态的数据那么不用v-bind就可以传递
+    如果数据是data中的一个参数,可以使用 v-bind 来动态传递 prop
+</head>
+
+<body>
+    <div id="blog-post-demo">
+        <blog-post :title="a"></blog-post>
+        <blog-post title="Blogging with Vue"></blog-post>
+        <blog-post title="Why Vue is so fun"></blog-post>
+    </div>
+    <script>
+        Vue.component('blog-post', {
+            props: ['title'],
+            template: '<h3>{{title}}</h3>'
+        });
+        new Vue({
+            el: '#blog-post-demo',
+            data: {
+                a: "My journey with Vue"
+            },
+        })
+    </script>
+</body>
+
+</html>

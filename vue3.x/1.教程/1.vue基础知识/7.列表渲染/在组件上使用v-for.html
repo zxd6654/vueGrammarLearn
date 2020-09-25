@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+在2.2.0+版本里,当在组件上使用v-for时,key现在是必须的
+
+不要使用对象或数组之类的非基本类型值作为 v-for 的 key。请用字符串或数值类型的值。
+
+由于 JavaScript 的限制，Vue 不能检测数组和对象的变化
+<my-component
+        v-for="(item, index) in items"
+        v-bind:item="item"
+        v-bind:index="index"
+        v-bind:key="item.id"
+></my-component>
+</body>
+</html>

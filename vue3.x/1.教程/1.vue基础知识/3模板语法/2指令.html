@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+指令的职责是,当表达式的值改变时,将其产生的连带影响,响应式的作用与DOM
+
+1参数
+<a v-bind:href="url">...</a>
+
+2动态参数
+从2.6开始,可以用方括号括起来的js表达式作为一个指令的参数
+<a v-bind:[attributeName]="url">...</a>
+<a v-on:[eventName]="doSomething"> ... </a>
+
+对动态参数表达式的约束
+动态参数表达式有一些语法约束，因为某些字符，如空格和引号，放在 HTML attribute 名里是无效的
+
+在 DOM 中使用模板时 (直接在一个 HTML 文件里撰写模板)，还需要避免使用大写字符来命名键名，因为浏览器会把 attribute 名全部强制转为小写：
+<!--
+在 DOM 中使用模板时这段代码会被转换为 `v-bind:[someattr]`。
+除非在实例中有一个名为“someattr”的 property，否则代码不会工作。
+-->
+<a v-bind:[someAttr]="value"> ... </a>
+
+
+3修饰符是以半角句号 . 指明的特殊后缀，用于指出一个指令已改一热书方式绑定。
+例如，.prevent 修饰符告诉 v-on 指令对于触发的事件调用 event.preventDefault()：
+<form v-on:submit.prevent="onSubmit">...</form>
+</body>
+</html>

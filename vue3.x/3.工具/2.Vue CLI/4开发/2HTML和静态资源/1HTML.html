@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+index文件
+public/index.html 文件是一个会被 html-webpack-plugin 处理的模板。
+
+插值
+因为 index 文件被用作模板，所以你可以使用 lodash template 语法插入内容
+
+Preload
+<link rel="preload">
+是一种 resource hint，用来指定页面加载后很快会被用到的资源，所以在页面加载的过程中，
+我们希望在浏览器开始主体渲染之前尽早 preload。
+
+Prefetch
+<link rel="prefetch"> 是一种 resource hint，用来告诉浏览器在页面加载完成后，
+利用空闲时间提前获取用户未来可能会访问的内容。
+
+不生成index
+
+构建一个多页应用
+不是每个应用都需要一个单页应用,vue cli支持使用vue.config.js中的pages选项构建一个多页面的应用
+构建好的应用将会在不同的的入口之间高效共享通用的chunk以获得最佳的加载性能
+</body>
+</html>

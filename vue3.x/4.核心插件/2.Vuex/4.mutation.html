@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+更改Vuex的store中的状态的唯一方法时提交mutation,vuex中的mutation非常类似于事件:
+每个mutation都有一个字符串的事件类型(type)和一个回调函数(handler).
+这个回调函数就是我们实际进行状态更改的地方,并且他会接受state作为第一个参数
+<script>
+    const store = new Vuex.Store({
+        state: {
+            count: 1
+        },
+        mutations: {
+            increment(state, n) {
+                //变更状态
+                state.count += n;
+            }
+        }
+    })
+</script>
+
+调用的时候:store.commit('increment',10)
+调用的时候:store.commit('increment',{amount:10})
+调用的时候:store.commit({type:'increment',amount:10})
+
+
+Mutation 需遵守 Vue 的响应规则
+既然Vuex的store中的状态是响应式的,那么当我们变更状态时,监视状态的vue组件也会自动更新
+1 最好提前在你的store中初始化好所有所需属性
+2 当需要在对象添加新属性时,
+使用Vue.set(obj,'newProp',123),
+新对象替换旧对象state.obj={...state.obj,newProp:123}
+
+
+使用常量替代Mutation事件类型
+// mutation-types.js
+export const SOME_MUTATION = 'SOME_MUTATION'
+
+// store.js
+import Vuex from 'vuex'
+import { SOME_MUTATION } from './mutation-types'
+
+const store = new Vuex.Store({
+state: { ... },
+mutations: {
+// 我们可以使用 ES2015 风格的计算属性命名功能来使用一个常量作为函数名
+[SOME_MUTATION] (state) {
+// mutate state
+}
+}
+})
+
+
+Mutation 必须是同步函数
+因为当 mutation 触发的时候，回调函数还没有被调用，
+devtools 不知道什么时候回调函数实际上被调用——实质上任何在回调函数中进行的状态的改变都是不可追踪的
+
+
+在组件中提交Mutation
+你可以在组件中使用 this.$store.commit('xxx') 提交 mutation，
+或者使用 mapMutations 辅助函数将组件中的 methods 映射为 store.commit 调用（需要在根节点注入 store）。
+<script>
+    new Vue({
+        methods: {
+            ...mapMutations(['increment']),
+            ...mapMutations({add: 'increment'})
+        }
+    })
+</script>
+</body>
+
+</html>

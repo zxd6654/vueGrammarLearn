@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    由于使用单一状态树，应用的所有状态会集中到一个比较大的对象。当应用变得非常复杂时，store 对象就有可能变得相当臃肿。
+
+    为了解决以上问题，Vuex 允许我们将 store 分割成模块（module）。每个模块拥有自己的 state、mutation、action、getter、甚至是嵌套子模块——从上至下进行同样方式的分割：
+
+    <script>
+        const moduleA = {
+            state: {
+                //...
+            },
+            mutations: {
+                //...
+            },
+            actions: {
+                // ...
+            },
+            getters: {
+                // ...
+            }
+        }
+
+        const moduleB = {
+            state: {
+                // ...
+            },
+            mutations: {
+                // ...
+            },
+            actions: {
+                //  ...
+            }
+        }
+
+        const store = new Vuex.Store({
+            modules: {
+                a: moduleA,
+                b: moduleB
+            }
+        })
+
+        store.state.a // -> moduleA 的状态
+        store.state.b // -> moduleB 的状态
+    </script>
+
+    命名空间
+
+    默认情况下，模块内部的 action、mutation 和 getter
+    是注册在全局命名空间的——这样使得多个模块能够对同一 mutation 或 action 作出响应。
+
+    如果希望你的模块具有更高的封装和复用性,你可以通过添加 namespaced: true 的方式使其成为带命名空间的模块。
+    当模块被注册后，它的所有 getter、action 及 mutation 都会自动根据模块注册的路径调整命名
+
+
+    在带命名空间的模块内访问全局内容（Global Assets）
+    <script>
+        let store = {
+            modules: {
+                foo: {
+                    namespaced: true,
+
+                    getters: {
+                        // 在这个模块的 getter 中，`getters` 被局部化了
+                        // 你可以使用 getter 的第四个参数来调用 `rootGetters`
+                        someGetter(state, getters, rootState, rootGetters) {
+                            getters.someOtherGetter // -> 'foo/someOtherGetter'
+                            rootGetters.someOtherGetter // -> 'someOtherGetter'
+                        },
+                        someOtherGetter: state => { //...
+                        }
+                    },
+
+                    actions: {
+                        // 在这个模块中， dispatch 和 commit 也被局部化了
+                        // 他们可以接受 `root` 属性以访问根 dispatch 或 commit
+                        someAction({ dispatch, commit, getters, rootGetters }) {
+                            getters.someGetter // -> 'foo/someGetter'
+                            rootGetters.someGetter // -> 'someGetter'
+
+                            dispatch('someOtherAction') // -> 'foo/someOtherAction'
+                            dispatch('someOtherAction', null, { root: true }) // -> 'someOtherAction'
+
+                            commit('someMutation') // -> 'foo/someMutation'
+                            commit('someMutation', null, { root: true }) // -> 'someMutation'
+                        },
+                        someOtherAction(ctx, payload) { //...
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    带命名空间的绑定函数
+    你可以将模块的空间名称字符串作为第一个参数传递给上述函数，这样所有绑定都会自动将该模块作为上下文
+    你可以通过使用 createNamespacedHelpers 创建基于某个命名空间辅助函数
+    <script>
+        import { createNamespacedHelpers } from 'vuex'
+        const { mapState, mapActions } = createNamespacedHelpers('some/nested/module')
+
+        new Vue({
+            computed: {
+                ...mapState({
+                    a: state => state.some.nested.module.a,
+                    b: state => state.some.nested.module.b
+                }),
+
+                ...mapState('some/nested/module', {
+                    a: state => state.a,
+                    b: state => state.b
+                }),
+
+                // 在 `some/nested/module` 中查找
+                ...mapState({
+                    a: state => state.a,
+                    b: state => state.b
+                })
+            },
+            methods: {
+                ...mapActions([
+                    'some/nested/module/foo', // -> this['some/nested/module/foo']()
+                    'some/nested/module/bar' // -> this['some/nested/module/bar']()
+                ]),
+
+                ...mapActions('some/nested/module', [
+                    'foo', // -> this.foo()
+                    'bar' // -> this.bar()
+                ]),
+
+                // 在 `some/nested/module` 中查找
+                ...mapActions([
+                    'foo',
+                    'bar'
+                ])
+            }
+        })
+    </script>
+</body>
+
+</html>

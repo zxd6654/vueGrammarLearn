@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../../../vue.js"></script>
+    <script src="../../../../vue-router.js"></script>
+</head>
+
+<body>
+router-view 是基本的动态组件，所以我们可以用 transition 组件给它添加一些过渡效果：
+
+<div id="app">
+    <router-link to="/foo">foo</router-link>
+    <router-link to="/bar">bar</router-link>
+    <router-view></router-view>
+</div>
+<script>
+    const Foo = {
+        template: `
+    <transition name="slide">
+      <div class="foo">foo dom</div>
+    </transition>`
+    }
+
+    const Bar = {
+        template: `
+    <transition name="fade">
+      <div class="bar">bar dom</div>
+    </transition>`
+    }
+    let router = new VueRouter({
+        routes: [
+            {
+                path: '/foo',
+                component: Foo,
+            },
+            {
+                path: '/bar',
+                component: Bar,
+            },
+        ]
+    });
+
+    new Vue({router}).$mount('#app');
+</script>
+</body>
+
+</html>

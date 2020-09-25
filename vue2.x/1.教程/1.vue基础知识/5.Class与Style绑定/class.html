@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--class 与 style 是 HTML 元素的属性，用于设置元素的样式，我们可以用 v-bind 来设置样式属性-->
+    <!--v-bind 在处理 class 和 style 时， 专门增强了它。表达式的结果类型除了字符串之外，还可以是对象或数组。-->
+    <script src="../../../../vue.js"></script>
+    <style>
+        .active {
+            width: 100px;
+            height: 200px;
+            background: red;
+        }
+
+        .danger {
+            width: 100px;
+            height: 100px;
+            background: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        我们可以为 v-bind:class 设置一个对象，从而动态的切换 class
+        <div v-bind:class="{active:isActive}"></div>
+
+        我们也可以在对象中传入更多属性用来动态切换多个 class。
+        <div v-bind:class="{active:isActive,danger:hasError}"></div>
+
+        我们可以把一个数组传给 v-bind:class，以应用一个 class 列表：
+        <div v-bind:class="[active, danger]"></div>
+        <div v-bind:class="[isActive ? active : '', errorClass]"></div>
+
+        我们也可以直接绑定数据里的一个对象：
+        <div v-bind:class="obj"></div>
+
+        我们也可以在这里绑定返回对象的计算属性。这是一个常用且强大的模式：
+        <div v-bind:class="classObject"></div>
+
+        用在组件上
+        <my-component class="baz boo"></my-component>
+        <my-component v-bind:class="{ active: isActive }"></my-component>
+    </div>
+    <!--<script>-->
+    <!--new Vue({-->
+    <!--el:'#app',-->
+    <!--data:{-->
+    <!--isActive:true,-->
+    <!--hasError:false,-->
+    <!--obj:{-->
+    <!--active:false,-->
+    <!--danger:true-->
+    <!--}-->
+    <!--}-->
+    <!--})-->
+    <!--</script>-->
+
+    <script>
+        Vue.component('my-component', {
+            template: '<p class="foo bar">Hi</p>'
+        });
+
+        new Vue({
+            el: '#app',
+            data: {
+                isActive: true,
+                error: null
+            },
+            computed: {
+                classObject: function () {
+                    return {
+                        active: this.isActive && !this.error,
+                        'text-danger': this.error && this.error.type === "fatal"
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

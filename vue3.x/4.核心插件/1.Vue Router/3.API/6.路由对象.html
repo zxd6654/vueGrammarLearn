@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+一个路由对象表示当前激活的路由状态信息,
+包含了当前 URL 解析得到的信息，还有 URL 匹配到的路由记录 (route records)。
+
+路由对象出现在多个地方
+1 在组件内, this.$route
+2 在$route观察者内回调
+3 router.match(location)的返回值
+
+<body>
+    路由对象属性
+
+    1 $route.path 字符串，对应当前路由的路径，
+
+    2 $route.params 一个 key/value 对象，包含了动态片段和全匹配片段，如果没有路由参数，就是一个空对象。
+
+    3 $route.query 一个 key/value 对象，表示 URL 查询参数。例如，对于路径 /foo?user=1，则有 $route.query.user == 1，如果没有查询参数，则是个空对象。
+
+    4 $route.hash 当前路由的 hash 值 (带 #) ，如果没有 hash 值，则为空字符串。
+
+    5 $route.fullPath 完成解析后的 URL，包含查询参数和 hash 的完整路径。
+
+    6 $route.matched 一个数组，包含当前路由的所有嵌套路径片段的路由记录 。
+
+    7 $route.name 当前路由的名称，如果有的话。
+
+    8 $route.redirectedFrom 如果存在重定向，即为重定向来源的路由的名字。
+</body>
+
+</html>

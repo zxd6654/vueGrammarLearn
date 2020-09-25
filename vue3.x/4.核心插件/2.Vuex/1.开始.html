@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+在一个模块化的打包系统中，您必须显式地通过 Vue.use() 来安装 Vuex：
+Vuex 依赖 Promise。如果你支持的浏览器并没有实现 Promise (比如 IE)，那么你可以使用一个 polyfill 的库，例如 es6-promise。
+
+
+Vuex是什么?
+Vuex是一个专为vue.js应用程序开发的状态管理模式.它采用集中式存储管理应用的所有组件的状态,
+并以相应的规则保证以一种可预测的方式发生变化.
+
+什么情况下使用vuex
+如果您不打算开发大型单页应用，使用 Vuex 可能是繁琐冗余的。确实是如此——如果您的应用够简单，您最好不要使用 Vuex。一个简单的 store
+模式就足够您所需了。但是，如果您需要构建一个中大型单页应用，您很可能会考虑如何更好地在组件外部管理状态，Vuex 将会成为自然而然的选择。
+引用 Redux 的作者 Dan Abramov 的话说就是： Flux 架构就像眼镜：您自会知道什么时候需要它。
+
+
+每一个 Vuex 应用的核心就是 store（仓库）。“store”基本上就是一个容器，
+它包含着你的应用中大部分的状态 (state)。Vuex 和单纯的全局对象有以下两点不同：
+
+1 Vuex 的状态存储是响应式的。当 Vue 组件从 store 中读取状态的时候，
+若 store 中的状态发生变化，那么相应的组件也会相应地得到高效更新。
+
+2 你不能直接改变 store 中的状态。改变 store 中的状态的唯一途径就是显式地提交 (commit) mutation。
+这样使得我们可以方便地跟踪每一个状态的变化，从而让我们能够实现一些工具帮助我们更好地了解我们的应用
+<body>
+
+</body>
+
+</html>

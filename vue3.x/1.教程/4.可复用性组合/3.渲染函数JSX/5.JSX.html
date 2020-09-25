@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+这就是为什么会有一个 Babel 插件，用于在 Vue 中使用 JSX 语法，它可以让我们回到更接近于模板的语法上。
+
+https://github.com/vuejs/jsx
+<body>
+<script>
+    import AnchoredHeading from './AnchoredHeading.vue'
+
+    new Vue({
+        el: '#demo',
+        render: function (h) {
+            return ( <AnchoredHeading level = {1}><span>Hello</span> world! </AnchoredHeading>)
+        }
+    })
+</script>
+</body>
+
+</html>

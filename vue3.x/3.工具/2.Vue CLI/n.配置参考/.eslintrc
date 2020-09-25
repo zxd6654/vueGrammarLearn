@@ -1,0 +1,9 @@
+/*
+ * @Author: zxd 
+ * @Date: 2019-09-16 17:18:49 
+ * @Last Modified by: zxd
+ * @Last Modified time: 2019-09-16 17:21:01
+ */
+//ESLint 可以通过 .eslintrc 或 package.json 中的 eslintConfig 字段来配置。
+//具体配置请看一下网站
+//https: //github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint

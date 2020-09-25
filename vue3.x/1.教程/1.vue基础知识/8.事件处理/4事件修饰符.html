@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	vue.js为v-on提供了事件修饰符，来处理dom事件细节，如：even.preventDefault()或event.propagation()
+	vue.js通过有点（.）表示的指令后缀来调用修饰符。
+	.stop
+	.prevent
+	.capture
+	.self
+	.once
+	.passive
+
+	不像其他只能对原生的dom事件起作用的修饰符, .once修饰符还能被用到自定义的组件事件上
+
+	使用修饰符时，顺序很重要；相应的代码会以同样的顺序产生。因此，用 v-on:click.prevent.self 会阻止所有的点击，而 v-on:click.self.prevent 只会阻止对元素自身的点击。
+	<script src="../../../../vue.js"></script>
+</head>
+
+<body>
+	<!-- 阻止单击事件冒泡 -->
+	<a v-on:click.stop="doThis">stop</a>
+	<!-- 提交事件不再重载页面 -->
+	<form v-on:submit.prevent="onSubmit">prevent</form>
+	<!-- 修饰符可以串联  -->
+	<a v-on:click.stop.prevent="doThat">stop.prevent</a>
+	<!-- 只有修饰符 -->
+	<form v-on:submit.prevent></form>
+	<!-- 添加事件侦听器时使用事件捕获模式 -->
+	<div v-on:click.capture="doThis">...</div>
+	<!-- 只当事件在该元素本身（而不是子元素）触发时触发回调 -->
+	<div v-on:click.self="doThat">...</div>
+
+	<!-- click 事件至少触发一次，2.1.4版本新增 -->
+	<a v-on:click.once="doThis"></a>
+</body>
+
+</html>

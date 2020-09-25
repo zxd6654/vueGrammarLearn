@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../../vue.js"></script>
+</head>
+
+<body>
+    vm.$data 对象 vue实例观察的数据对象
+    vm.$props 对象 当前组件接收到的props对象
+    vm.$el vue实例使用的根DOM元素
+    vm.$options 对象 用于当前Vue实例的初始化选项.需要在选项中包含自定义property时会有用处
+    vm.$parent 获取父实例
+    vm.$root 获取根实例
+    vm.$children 获取当前实例的直接子组件,需要注意$children并不保证顺序,也不是响应式的
+    vm.$slots 用来访问被插槽分发的内容。
+    vm.$scopedSlots.default({ 用来访问作用域插槽。
+
+    })
+    vm.$refs 对象，持有注册过 ref 特性 的所有 DOM 元素和组件实例。
+    vm.$isServer 当前 Vue 实例是否运行于服务器。
+    vm.$attrs
+    包含了父作用域中不作为 prop 被识别 (且获取) 的特性绑定 (class 和 style 除外)。
+    当一个组件没有声明任何 prop 时，这里会包含所有父作用域的绑定 (class 和 style 除外)，并且可以通过
+    v-bind="$attrs" 传入内部组件——在创建高级别的组件时非常有用。
+
+    vm.$listeners
+
+
+    <script>
+        //$options
+        new Vue({
+            customOption: 'foo',
+            created: function () {
+                console.log(this.$options.customOption)
+            }
+        })
+    </script>
+
+
+</body>
+
+</html>
