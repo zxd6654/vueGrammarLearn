@@ -1,3 +1,6 @@
+vue2.x语法
+vue3.x语法
+
 安装
 1 兼容性
   Vue 不支持 IE8 及以下版本，因为 Vue 使用了 IE8 无法模拟的 ECMAScript 5 特性。但它支持所有兼容 ECMAScript 5 的浏览器。
