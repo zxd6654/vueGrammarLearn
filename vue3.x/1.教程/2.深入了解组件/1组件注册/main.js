@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import Vue from 'vue2.x/vue'
 import upperFirst from 'lodash/upperFirst'
 import camelCase from 'lodash/camelCase'
 

@@ -104,7 +104,7 @@
     你可以将模块的空间名称字符串作为第一个参数传递给上述函数，这样所有绑定都会自动将该模块作为上下文
     你可以通过使用 createNamespacedHelpers 创建基于某个命名空间辅助函数
     <script>
-        import { createNamespacedHelpers } from 'vuex'
+        import { createNamespacedHelpers } from 'vue2.x/vuex'
         const { mapState, mapActions } = createNamespacedHelpers('some/nested/module')
 
         new Vue({
