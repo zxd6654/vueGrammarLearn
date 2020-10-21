@@ -9,6 +9,9 @@
     <script src="../../../vue.js"></script>
 </head>
 Vue.js 允许你自定义过滤器，可被用于一些常见的文本格式化。
+注意：过滤器更偏向于对文本数据的转化，不能够一栏this上下文。
+可以给过滤方法添加this参数，通过传参的方法，使用this；
+也可以使用计算属性替代过滤器
 <!-- 在双花括号中 -->
 <div id="app">
     <div>{{ message | capitalize }}</div>
