@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../../vue.js"></script>
+</head>
+
+<body>
+    传递给 createApp 的选项用于配置根组件。当我们挂载应用时，该组件被用作渲染的起点。
+
+    与大多数应用方法不同的是，mount 不返回应用本身。相反，它返回的是根组件实例。
+    <div id='app'></div>
+    <script>
+        const RootComponent = {
+            data() {
+                return {
+                    name: 'vue3'
+                }
+            }
+        }
+        const app = Vue.createApp(RootComponent)
+        const vm = app.mount('#app')
+
+        console.log('app', app)//返回应用本身
+        console.log('vm', vm)//返回组件实例
+    </script>
+</body>
+
+</html>

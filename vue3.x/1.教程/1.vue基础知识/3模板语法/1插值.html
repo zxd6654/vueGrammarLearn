@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
@@ -13,45 +14,47 @@
 
     2 原始html
     使用v-html指令用于输出html代码：
-    直接作为html--会忽略解析property值中的数据绑定,注意,你不能使用v-html
-    来复合局部模板,因为vue不是基于字符串的模板引擎
-    请只对可信用北荣使用HTML插值,防止xss攻击
+    在你的站点上动态渲染任意的 HTML 是非常危险的，因为它很容易导致 XSS 攻击 (opens new window)。请只对可信内容使用 HTML 插值，绝不要将用户提供的内容作为插值。
 
     3属性
     本文插值不能作用在HTML attribute上,遇到这种情况应该使用v-bind
     html属性中应使用v-bind指令
 
     4使用js表达式
-
-    <script src="../../../../vue2.x/vue.js"></script>
+    对于所有的数据绑定，vuejs都提供了完全的js表达式支持
+    每个绑定都只能包含单个表达式
+    <script src="../../../vue.js"></script>
 </head>
-<body>
-<div id="app">
-    <div v-html="message"></div>
-    <p>{{message}}</p>
-    <p>{{num+1}}</p>
-    <p :id="'list-'+num"></p>
-</div>
-<div id="app-2">
-    <span v-bind:title="message">
-        鼠标悬停几秒钟查看此处动态绑定的提示信息
-    </span>
-</div>
-<script>
-    var app = new Vue({
-        el: '#app',
-        data: {
-            message: '菜鸟教程',
-            num: 1,
-        }
-    });
-    var app2 = new Vue({
 
-        el: '#app-2',
-        data: {
-            message: '页面加载于' + new Date().toLocaleString()
-        }
-    })
-</script>
+<body>
+    <div id="app">
+        <div v-html="message"></div>
+        <p>{{message}}</p>
+        <p>{{num+1}}</p>
+        <p :id="'list-'+num"></p>
+    </div>
+    <div id="app-2">
+        <span v-bind:title="message">
+            鼠标悬停几秒钟查看此处动态绑定的提示信息
+        </span>
+    </div>
+    <script>
+        var app = Vue.createApp({
+            data() {
+                return {
+                    message: '菜鸟教程',
+                    num: 1,
+                }
+            }
+        }).mount('#app');
+        var app2 = Vue.createApp({
+            data() {
+                return {
+                    message: '页面加载于' + new Date().toLocaleString()
+                }
+            }
+        }).mount('#app-2')
+    </script>
 </body>
+
 </html>

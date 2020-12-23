@@ -20,6 +20,8 @@
         ></todo-item>
     </ol>
 </div>
+vue2是先注册组件，在实例化vue对象
+这里的app2和vm是一样的，返回的是应用本身
 <script>
 //   Vue.component('todo-item',{
 //       template:'<li>这是个代办项</li>'
@@ -33,7 +35,6 @@
         template:'<li>{{todo.text}}{{todo.id}}</li>'
     });
     var app2=new Vue({
-        el:'#app2',
         data:{
             groceryList:[
                 {id:0,text:'蔬菜'},
@@ -42,6 +43,10 @@
             ]
         }
     })
+
+    var vm=app2.$mount('#app2')
+
+    console.log(app2,vm)
 </script>
 </body>
 </html>

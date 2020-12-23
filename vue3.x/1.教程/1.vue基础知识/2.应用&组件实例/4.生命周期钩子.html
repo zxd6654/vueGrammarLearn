@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    beforeCreate 在实例初始化之后，数据观测 (data observer) 和 event/watcher 事件配置之前被调用。
+    created 在实例创建完成后被立即调用
+    beforeMount 在挂载开始之前被调用：相关的 render 函数首次被调用。
+    mounted el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用该钩子。
+    beforeUpdate 数据更新时调用，发生在虚拟 DOM 打补丁之前。
+    updated 当这个钩子被调用时，组件 DOM 已经更新，所以你现在可以执行依赖于 DOM 的操作。
+    activated keep-alive 组件激活时调用
+    deactivated keep-alive 组件停用时调用。
+    beforeUnmounted 实例销毁之前调用。在这一步，实例仍然完全可用。
+    unmounted Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。
+    errorCaptured 当捕获一个来自子孙组件的错误时被调用。
+
+
+    不要在选项 property 或回调上使用箭头函数，比如 created: () => console.log(this.a) 或 vm.$watch('a', newValue =>
+    this.myMethod())。因为箭头函数并没有 this，this 会作为变量一直向上级词法作用域查找，直至找到为止，经常导致 Uncaught TypeError: Cannot read property of
+    undefined 或 Uncaught TypeError: this.myMethod is not a function 之类的错误。
+
+</head>
+
+<body>
+    <script src="../../../vue.js"></script>
+    <div id="app">{{a}}</div>
+    <script>
+        vm = new Vue({
+            el: '#app',
+            data: {
+                a: 1
+            },
+            create: function () {
+                // `this` 指向 vm 实例
+                console.log('a is: ' + this.a)
+            }
+        })
+    </script>
+</body>
+
+</html>

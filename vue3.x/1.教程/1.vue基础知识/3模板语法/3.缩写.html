@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    缩写
+
+    v-bind
+    <!-- 完整语法 -->
+    <a v-bind:href="url"> ... </a>
+
+    <!-- 缩写 -->
+    <a :href="url"> ... </a>
+
+    <!-- 动态参数的缩写 -->
+    <a :[key]="url"> ... </a>
+
+    v-on
+    <!-- 完整语法 -->
+    <a v-on:click="doSomething"> ... </a>
+
+    <!-- 缩写 -->
+    <a @click="doSomething"> ... </a>
+
+    <!-- 动态参数的缩写 (2.6.0+) -->
+    <a @[event]="doSomething"> ... </a>
+
+
+    注意事项
+    
+    对动态参数值约定
+    动态参数预期会求出一个字符串，异常情况下值为 null。
+    这个特殊的 null 值可以被显性地用于移除绑定。
+    任何其它非字符串类型的值都将会触发一个警告。
+
+    对动态参数表达式约定
+    动态参数表达式有一些语法约束，
+    因为某些字符，如空格和引号，放在 HTML attribute 名里是无效的
+
+    JavaScript 表达式
+</body>
+
+</html>
