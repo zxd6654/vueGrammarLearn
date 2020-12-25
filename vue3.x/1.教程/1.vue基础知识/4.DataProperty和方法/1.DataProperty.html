@@ -6,7 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-组件的data选项是一个函数。
+组件的data选项是一个函数。Vue再创建新组建实力的过程中调用此函数。
+他因该返回一个对象，然后Vue会通过响应性系统将其包裹起来，并以$data
+的形式存储在组件实例中。为方便起见，该对象的然和顶级property也直接通过组件实例暴露出来
+
+
+直接将不包含再data中的新property不在背后的响应式$data对象内，所以vue
+的响应式系统不会自动跟踪他
 <body>
 
 </body>

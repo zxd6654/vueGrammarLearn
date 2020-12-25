@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../../vue.js"></script>
+    <script src="https://unpkg.com/lodash@4.17.20/lodash.min.js"></script>
+</head>
+
+<body>
+    methods可以被当作事件监听，也可以直接从模板中调用
+
+    防抖和节流
+    vue没有内置支持防抖和节流，但可以使用lodash等库来实现
+
+    <div id='lodash'>
+     <save-button></save-button>
+    </div>
+    <script>
+        const app = Vue.createApp({})
+
+        app.component('save-button', {
+            created() {
+                // 用 Lodash 的防抖函数
+                this.debouncedClick = _.debounce(this.click, 2000)
+            },
+            unmounted() {
+                // 移除组件时，取消定时器
+                this.debouncedClick.cancel()
+            },
+            methods: {
+                click() {
+                    console.log('点击响应')
+                }
+            },
+            template: `
+            <button @click="debouncedClick">
+             Save
+            </button>
+            `
+        })
+
+        app.mount('#lodash')
+    </script>
+</body>
+
+</html>

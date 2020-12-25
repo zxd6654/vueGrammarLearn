@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
     对于任何复杂逻辑,你都应该使用计算属性
     计算属性在处理一些复杂逻辑时是很有用的。
 
-    <script src="../../../../vue2.x/vue.js"></script>
+    <script src="../../../vue.js"></script>
 </head>
+
 <body>
-方法一
-<div id="app">
-    {{message.split().reverse().join()}}
-</div>
-<script>
-    new Vue({
-        el: '#app',
-        data: {
-            message: 'Runoob!'
-        }
-    })
-</script>
+    方法一
+    <div id="app">
+        {{message.split().reverse().join()}}
+    </div>
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    message: 'Runoob!'
+                }
+            }
+        }).mount('#app')
+    </script>
 </body>
+
 </html>
