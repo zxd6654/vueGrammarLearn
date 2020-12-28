@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../../vue.js"></script>
+</head>
+
+<body>
+    <ul id="array-with-index">
+        <li v-for="(item, index) in items">
+            {{ parentMessage }} - {{ index }} - {{ item.message }}
+        </li>
+    </ul>
+
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    parentMessage: 'Parent',
+                    items: [{ message: 'Foo' }, { message: 'Bar' }]
+                }
+            }
+        }).mount('#array-with-index')
+    </script>
+</body>
+
+</html>

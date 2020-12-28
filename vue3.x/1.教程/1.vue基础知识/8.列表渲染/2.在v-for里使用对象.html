@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../../vue.js"></script>
+</head>
+
+<body>
+    第一个参数是键值
+    第二个参数是键
+    第三个参数是索引
+    <ul id="v-for-object" class="demo">
+        <li v-for="(value, name, index) in myObject">
+            {{ index }}. {{ name }}: {{ value }}
+          </li>
+    </ul>
+
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    myObject: {
+                        title: 'How to do lists in Vue',
+                        author: 'Jane Doe',
+                        publishedAt: '2016-04-10'
+                    }
+                }
+            }
+        }).mount('#v-for-object')
+    </script>
+</body>
+
+</html>

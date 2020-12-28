@@ -44,30 +44,28 @@
         <my-component class="baz boo"></my-component>
         <my-component v-bind:class="{ active: isActive }"></my-component>
     </div>
-    <!--<script>-->
-    <!--new Vue({-->
-    <!--el:'#app',-->
-    <!--data:{-->
-    <!--isActive:true,-->
-    <!--hasError:false,-->
-    <!--obj:{-->
-    <!--active:false,-->
-    <!--danger:true-->
-    <!--}-->
-    <!--}-->
-    <!--})-->
-    <!--</script>-->
+    <!-- <script>
+        Vue.createApp({
+            data() {
+                return {
+                    isActive: true,
+                    hasError: false,
+                    obj: {
+                        active: false,
+                        danger: true
+                    }
+                }
+            }
+        }).mount('#app')
+    </script> -->
 
     <script>
-        Vue.component('my-component', {
-            template: '<p class="foo bar">Hi</p>'
-        });
-
-        new Vue({
-            el: '#app',
-            data: {
-                isActive: true,
-                error: null
+        var app = Vue.createApp({
+            data() {
+                return {
+                    isActive: true,
+                    error: null
+                }
             },
             computed: {
                 classObject: function () {
@@ -78,6 +76,12 @@
                 }
             }
         })
+
+        app.component('my-component', {
+            template: '<p class="foo bar"></p>'
+        })
+
+        app.mount('#app')
     </script>
 </body>
 

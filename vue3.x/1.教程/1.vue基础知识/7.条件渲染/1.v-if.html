@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    v-if 指令用于条件性地渲染一块内容。这块内容只会在指令的表达式返回
+    truthy 值的时候被渲染
+    可以用v-else指令给v-if添加一个else块
+
+    在 template 元素上使用 v-if 条件渲染分组 可以切换多个元素
+
+    你可以使用 v-else 指令来表示 v-if 的“else 块”
+    v-else 元素必须紧跟在带 v-if 或者 v-else-if 的元素的后面，否则它将不会被识别
+
+    
+</head>
+
+<body>
+    <script src="../../../vue.js"></script>
+    <div id="app">
+        <div v-if="Math.random()>0.5">
+            随机数大于0.5
+        </div>
+        <div v-else>
+            随机数小于等于0.5
+        </div>
+    </div>
+    <script>
+        Vue.createApp({
+
+        }).mount('#app')
+    </script>
+</body>
+
+</html>
