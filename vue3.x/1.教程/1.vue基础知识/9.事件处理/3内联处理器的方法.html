@@ -5,10 +5,12 @@
 	<meta charset="UTF-8">
 	<title></title>
 	除了直接绑定到一个方法，也可以用内联js语句
-	有时候也 需要在内敛语句处理器中访问原始的dom事件,可以用特殊变量$event把它传入方法
+	有时候也需要在内敛语句处理器中访问原始的dom事件,
+	可以用特殊变量$event把它传入方法
 
-	有时也需要在内联语句处理器中访问原始的DOM事件,可以用特殊变量$event把它传入方法
-	<script src="../../../../vue2.x/vue.js"></script>
+	有时也需要在内联语句处理器中访问原始的DOM事件,
+	可以用特殊变量$event把它传入方法
+	<script src="../../../vue.js"></script>
 </head>
 
 <body>
@@ -18,14 +20,13 @@
 
 	</div>
 	<script>
-		new Vue({
-			el: '#app',
+		Vue.createApp({
 			methods: {
 				say: function (message) {
 					alert(message)
 				}
 			}
-		})
+		}).mount('#app')
 	</script>
 </body>
 

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="../../../../vue2.x/vue.js"></script>
+    <script src="../../../vue.js"></script>
     <style>
         .tab-button {
             padding: 6px 10px;
@@ -50,22 +50,12 @@ currentTabComponent 可以包括
 </div>
 
 <script>
-    Vue.component('tab-home', {
-        template: '<div>Home component</div>'
-    })
-    Vue.component('tab-posts', {
-        template: '<div>Posts component</div>'
-    })
-    Vue.component('tab-archive', {
-        template: '<div>Archive component</div>'
-    })
-
-
-    new Vue({
-        el: '#dynamic-component-demo',
-        data: {
-            currentTab: 'Home',
-            tabs: ['Home', 'Posts', 'Archive']
+    const app = Vue.createApp({
+        data() {
+            return {
+                currentTab: 'Home',
+                tabs: ['Home', 'Posts', 'Archive']
+            }
         },
         computed: {
             currentTabComponent: function () {
@@ -73,6 +63,19 @@ currentTabComponent 可以包括
             }
         }
     })
+
+    app.component('tab-home', {
+        template: '<div>Home component</div>'
+    })
+    app.component('tab-posts', {
+        template: '<div>Posts component</div>'
+    })
+    app.component('tab-archive', {
+        template: '<div>Archive component</div>'
+    })
+
+
+    app.mount('#dynamic-component-demo')
 </script>
 
 <body>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../../vue.js"></script>
+</head>
+
+<body>
+    多事件处理器
+    事件处理程序中可以有多个方法，这些方法由逗号运算符分隔
+
+    <div id='app'>
+        <button @click='one(),two()'>submit</button>
+    </div>
+
+    <script>
+        Vue.createApp({
+            methods: {
+                one() {
+                    console.log('one')
+                },
+                two() {
+                    console.log('two')
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+
+</html>

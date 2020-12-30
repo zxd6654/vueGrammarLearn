@@ -1,39 +1,40 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
 
-		<script src="../../../../vue2.x/vue.js"></script>
-	</head>
+	<script src="../../../vue.js"></script>
+</head>
 
-	<body>
-		<div id='app'>
-			<!-- `greet` 是在下面定义的方法名 -->
-			<button v-on:click='greet'>Greet</button>
-		</div>
-		<script>
-			var app = new Vue({
-				el: '#app',
-				data: {
+<body>
+	<div id='app'>
+		<!-- `greet` 是在下面定义的方法名 -->
+		<button v-on:click='greet'>Greet</button>
+	</div>
+	<script>
+		var app = Vue.createApp({
+			data() {
+				return {
 					name: 'Vue.js'
-				},
-				//				在methods对象中定义方法
-				methods: {
-					greet: function(event) {
-						//            		this 在方法里指当前vue实例
-						alert('hello' + this.name + '!')
-						//              event是原生dom事件
-						if(event) {    /*只有执行了dom事件，比如button按钮点击事件，才会执行*/
-							alert(event.target.tagName)
-						}
+				}
+			},
+			//				在methods对象中定义方法
+			methods: {
+				greet: function (event) {
+					//            		this 在方法里指当前vue实例
+					alert('hello' + this.name + '!')
+					//              event是原生dom事件
+					if (event) {    /*只有执行了dom事件，比如button按钮点击事件，才会执行*/
+						alert(event.target.tagName)
 					}
 				}
-			})
+			}
+		}).mount('#app')
 
-			app.greet()  /*浏览器运行时，自执行一次*/
-		</script>
-	</body>
+		app.greet()  /*浏览器运行时，自执行一次*/
+	</script>
+</body>
 
 </html>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="../../../../vue2.x/vue.js"></script>
+    <script src="../../../vue.js"></script>
     父组件向子组件传递数据---props
 
     Prop 是你可以在组件上注册的一些自定义特性
@@ -23,16 +23,18 @@
         <blog-post title="Why Vue is so fun"></blog-post>
     </div>
     <script>
-        Vue.component('blog-post', {
+        const app = Vue.createApp({
+            data() {
+                return {
+                    a: "My journey with Vue"
+                }
+            },
+        })
+        app.component('blog-post', {
             props: ['title'],
             template: '<h3>{{title}}</h3>'
         });
-        new Vue({
-            el: '#blog-post-demo',
-            data: {
-                a: "My journey with Vue"
-            },
-        })
+        app.mount('#blog-post-demo')
     </script>
 </body>
 

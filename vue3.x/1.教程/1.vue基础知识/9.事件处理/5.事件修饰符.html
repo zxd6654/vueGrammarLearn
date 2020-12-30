@@ -16,7 +16,7 @@
 	不像其他只能对原生的dom事件起作用的修饰符, .once修饰符还能被用到自定义的组件事件上
 
 	使用修饰符时，顺序很重要；相应的代码会以同样的顺序产生。因此，用 v-on:click.prevent.self 会阻止所有的点击，而 v-on:click.self.prevent 只会阻止对元素自身的点击。
-	<script src="../../../../vue2.x/vue.js"></script>
+	<script src="../../../vue.js"></script>
 </head>
 
 <body>
@@ -35,6 +35,12 @@
 
 	<!-- click 事件至少触发一次，2.1.4版本新增 -->
 	<a v-on:click.once="doThis"></a>
+
+	<!-- 滚动事件的默认行为 (即滚动行为) 将会立即触发   -->
+	<!-- 而不会等待 `onScroll` 完成                   -->
+	<!-- 这其中包含 `event.preventDefault()` 的情况   -->
+	<!-- 这个 .passive 修饰符尤其能够提升移动端的性能。 -->
+	<div @scroll.passive="onScroll">...</div>
 </body>
 
 </html>

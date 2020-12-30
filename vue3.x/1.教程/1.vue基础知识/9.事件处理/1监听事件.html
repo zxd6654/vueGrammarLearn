@@ -7,22 +7,23 @@
     <!--事件监听可以使用v-on指令-->
     <!--通常情况下，我们需要使用一个方法来调用js方法-->
     <!--v-on可以接受一个定义的方法来调用-->
-    <script src="../../../../vue2.x/vue.js"></script>
+    <script src="../../../vue.js"></script>
 </head>
 
 <body>
-<div id="app">
-    <button v-on:click="counter+=1">加1</button>
-    <p>这个按钮被点击了{{counter}}次</p>
-</div>
-<script>
-    new Vue({
-        el: '#app',
-        data: {
-            counter: 0
-        }
-    })
-</script>
+    <div id="app">
+        <button v-on:click="counter+=1">加1</button>
+        <p>这个按钮被点击了{{counter}}次</p>
+    </div>
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    counter: 0
+                }
+            }
+        }).mount('#app')
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../../vue.js"></script>
+</head>
+
+<body>
+    在组建上使用v-model
+    <div id='model'>
+        <custom-input :model-value="searchText" @update:model-value="searchText = $event"></custom-input>
+        <custom-input v-model='searchText'></custom-input>
+    </div>
+
+    在自定义组件中创建 v-model 功能的另一种方法是使用 computed property 的功能来定义 getter 和 setter。
+    <div id='app2'>
+        <custom-input v-model='searchText'></custom-input>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    searchText: '111'
+                }
+            },
+            watch: {
+                searchText: function (oldVal, newVal) {
+                    console.log(this.searchText)
+                }
+            }
+        });
+        app.component('custom-input', {
+            props: ['modelValue'],
+            emits: ['update:modelValue'],
+            template: `
+            <input
+                :value="modelValue"
+                @input="$emit('update:modelValue', $event.target.value)"
+            >`
+        })
+        app.mount('#model');
+
+        const app2 = Vue.createApp({
+            data() {
+                return {
+                    searchText: '222'
+                }
+            },
+            watch: {
+                searchText: function (oldVal, newVal) {
+                    console.log(this.searchText)
+                }
+            }
+        })
+
+        app2.component('custom-input', {
+            props: ['modelValue'],
+            emits: ['update:modelValue'],
+            template: `
+                    <input v-model="value">
+                    `,
+            computed: {
+                value: {
+                    get() {
+                        return this.modelValue
+                    },
+                    set(value) {
+                        this.$emit('update:modelValue', value)
+                    }
+                }
+            }
+        })
+
+        app2.mount('#app2')
+    </script>
+</body>
+
+</html>

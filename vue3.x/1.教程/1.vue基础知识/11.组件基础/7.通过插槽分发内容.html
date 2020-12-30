@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
-  <script src="../../../../vue2.x/vue.js"></script>
+  <script src="../../../vue.js"></script>
 </head>
 
 <body>
@@ -17,17 +17,14 @@
     </alert-box>
   </div>
   <script>
-    Vue.component('alert-box', {
+    Vue.createApp({}).component('alert-box', {
       template: `
         <div class="demo-alert-box">
           <strong>Error!</strong>
           <slot></slot>
         </div>`
-    });
+    }).mount('#slot-demo');
 
-    new Vue({
-      el: '#slot-demo'
-    })
   </script>
 </body>
 
