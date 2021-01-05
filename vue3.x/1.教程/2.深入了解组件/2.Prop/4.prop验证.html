@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <script src="../../../../vue2.x/vue.js"></script>
+    <script src="../../../vue.js"></script>
     prop是单向绑定的：当父组件的属性变化时，将传导给子组件，但是不会反过来。
     组件可以为props指定验证要求。
     prop是一个对象而不是字符串数组时，它包含验证要求。
 
-    注意那些 prop 会在一个组件实例创建之前进行验证，所以实例的属性 (如 data、computed 等) 在 default 或 validator 函数中是不可用的。
+    *注意那些 prop 会在一个组件实例创建之前进行验证，所以实例的 property (如 data、computed 等) 在 default 或 validator 函数中是不可用的。
 </head>
 
 <body>
     <script>
-        Vue.component('example', {
+        app.component('example', {
             props: {
                 // 基础类型检测 （`null` 意思是任何类型都可以）
                 propA: Number,
@@ -41,6 +41,14 @@
                 propF: {
                     validator: function (value) {
                         return value > 10
+                    }
+                },
+                //具有默认值的函数
+                propG: {
+                    type: Function,
+                    //与对象或数组默认值不同，这不是一个工厂函数 —— 这是一个用作默认值的函数
+                    default: function () {
+                        return 'Default function'
                     }
                 }
             }

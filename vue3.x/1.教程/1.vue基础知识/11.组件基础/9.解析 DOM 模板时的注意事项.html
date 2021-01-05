@@ -34,7 +34,10 @@
     </table>
     <br>
     <table>
-        <tr is="tab-home"></tr>
+        <!-- 错误的，这样不会渲染任何东西 -->
+        <tr v-is="tab-home"></tr>
+        <!-- 正确的 -->
+        <tr v-is="'tab-home'"></tr>
     </table>
 </div>
 

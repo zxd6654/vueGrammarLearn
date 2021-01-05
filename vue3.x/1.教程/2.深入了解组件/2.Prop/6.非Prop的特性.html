@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+一个非 prop 的 attribute 是指传向一个组件，但是该组件并没有相应 props 或 emits 定义的 attribute。
+常见的示例包括 class、style 和 id 属性
+
+Attribute 继承
+当组件返回单个根节点时，非prop attribute将自动添加到根节点的attribute中。
+<!-- 具有非prop attribute的Date-picker组件-->
+<date-picker data-status="activated"></date-picker>
+
+<!-- 渲染 date-picker 组件 -->
+<div class="date-picker" data-status="activated">
+    <input type="datetime" />
+</div>
+
+同样的规则适用于事件监听器
+
+
+禁用 Attribute 继承
+如果你不希望组件的根元素继承 attribute，
+你可以在组件的选项中设置 inheritAttrs: false
+如果需要将所有非 prop attribute 应用于 input 元素而不是根 div 元素，则可以使用 v-bind 缩写来完成。
+<script>
+    app.component('...', {
+        inheritAttrs: false,
+        template: `
+        <div class="date-picker">
+            <input type="datetime" v-bind="$attrs" />
+        </div>
+        `
+    })
+</script>
+
+多个根节点上的 Attribute 继承
+与单个根节点组件不同，具有多个根节点的组件不具有自动 attribute 回退行为。如果未显式绑定 $attrs，将发出运行时警告。
+
+<body>
+
+</body>
+
+</html>

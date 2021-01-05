@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="../../../../vue2.x/vue.js"></script>
+    <script src="../../../vue.js"></script>
 </head>
-
+善守者潜于九地之下
+善攻者动于九天之上
 <body>
     全局注册往往是不够理想的。
 
@@ -15,13 +16,12 @@
         var ComponentB = { /* ... */ }
         var ComponentC = { /* ... */ }
 
-        new Vue({
-            el: '#app',
+        Vue.createApp({         
             components: {
                 'component-a': ComponentA,
                 'component-b': ComponentB
             }
-        })
+        }).mount('#app')
     </script>
 
     注意局部注册的组件在其子组件中不可用。例如，如果你希望 ComponentA 在 ComponentB 中可用，则你需要这样写：
