@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    不同于组件和 prop，事件名不存在任何自动化的大小写转换。
+    而是触发的事件名需要完全匹配监听这个事件所用的名称。  
+    
+    v-on 事件监听器在 DOM 模板中会被自动转换为全小写 
+    (因为 HTML 是大小写不敏感的)，
+    所以 @myEvent 将会变成 @myevent——导致 myEvent 不可能被监听到。
+    因此，我们推荐你始终使用 kebab-case 的事件名。
+</body>
+</html>

@@ -13,12 +13,13 @@
 Vue只有在这个组件需要被渲染的时候才会触发该工厂函数，且会把结果缓存起来供未来重渲染
 
 <script>
-    Vue.component('async-webpack-example', function (resolve) {
-        // 这个特殊的 `require` 语法将会告诉 webpack
-        // 自动将你的构建代码切割成多个包，这些包
-        // 会通过 Ajax 请求加载
-        require(['./my-async-component'], resolve)
-    })
+    import { defineAsyncComponent } from 'vue'
+
+    const AsyncComp = defineAsyncComponent(() =>
+        import('./components/AsyncComponent.vue')
+    )
+
+    app.component('async-component', AsyncComp)
 </script>
 
 <body>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../../vue.js"></script>
+    让我们创建一个示例自定义修饰符 capitalize，它将 v-model 绑定提供的字符串的第一个字母大写。
+
+    添加到组件 v-model 的修饰符将通过 modelModifiers prop 提供给组件。在下面的示例中，我们创建了一个组件，其中包含默认为空对象的 modelModifiers prop。
+</head>
+
+<body>
+    <div id="app">
+        <my-component v-model.capitalize="myText"></my-component>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    myText: ''
+                }
+            }
+        })
+
+        app.component('my-component', {
+            props: {
+                modelValue: String,
+                modelModifiers: {
+                    default: () => ({})
+                }
+            },
+            methods: {
+                emits: ['update:modelValue'],
+                emitValue(e) {
+                    let value = e.target.value
+                    if (this.modelModifiers.capitalize) {
+                        value = value.charAt(0).toUpperCase() + value.slice(1)
+                    }
+                    this.$emit('update:modelValue', value)
+                }
+            },
+            template: `<input
+                type="text"
+                :value="modelValue"
+                @input="emitValue">`
+        })
+
+        app.mount('#app')
+    </script>
+</body>
+
+</html>

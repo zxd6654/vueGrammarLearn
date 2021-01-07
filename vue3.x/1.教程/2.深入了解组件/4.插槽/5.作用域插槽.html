@@ -6,58 +6,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="../../../../vue2.x/vue.js"></script>
+    <script src="../../../vue.js"></script>
 </head>
 作用域插槽 就是父组件中插槽内容访问子组件的数据
 
 有时候让插槽的内容能够访问子组件中才有的数据是很有用的
-绑定在 slot 元素上的特性被称为插槽 prop。
-v-slot:default='slotProps' 缩写:v-slot="slotProps" 不能和具名插槽混用
-解构插槽 Prop v-slot="{ user }"
-只要出现多个插槽,请始终为所有的插槽使用完整的基于template的语法
+绑定在 slot 元素上的 attribute 被称为插槽 prop。
 
 <body>
     <div id='app'>
         <!-- 这里加不加default都可以，不加就是默认的 -->
-        <current-user v-slot:default='slotProps'>
-            {{slotProps.user.firstName}}
-        </current-user>
+        <todo-list v-slot:default='slotProps'>
+            {{slotProps.item}}
+        </todo-list>
+        <todo-list>
+            <template v-slot:default='zxd'>
+                {{zxd.item}}
+            </template>
+        </todo-list>
     </div>
     <script>
-        Vue.component('current-user', {
+        Vue.createApp({}).component('todo-list', {
             data() {
                 return {
-                    user: {
-                        firstName: 'zxd',
-                    }
+                    items: ['Feed a cat', 'Buy milk']
                 }
             },
-            template: `<span><slot v-bind:user='user'>{{user.firstName}}</slot></span>`
-        });
-
-        new Vue({
-            el: '#app'
-        })
+            template: `
+                <ul>
+                    <li v-for="(item, index) in items">
+                        <slot :item="item"></slot>
+                    </li>
+                </ul>
+                `
+        }).mount('#app')
     </script>
 
-    解构插槽Prop
-    作用域插槽的内部工作原理是将你的插槽内容包括再一个传入单个参数的函数里
-    function(slotscope){}
+    独占默认插槽的缩写语法
+    <todo-list v-slot="slotProps">
+        <i class="fas fa-check"></i>
+        <span class="green">{{ slotProps.item }}</span>
+    </todo-list>
 
-    解构，多个prop
-    <current-user v-slot="{ user }">
-        {{ user.firstName }}
-    </current-user>
+    注意默认插槽的缩写语法不能和具名插槽混用，因为它会导致作用域不明确
+    <!-- 无效，会导致警告 -->
+    <todo-list v-slot="slotProps">
+        <i class="fas fa-check"></i>
+        <span class="green">{{ slotProps.item }}</span>
 
-    prop重命名
-    <current-user v-slot="{ user: person }">
-        {{ person.firstName }}
-    </current-user>
+        <template v-slot:other="otherSlotProps">
+            slotProps is NOT available here
+        </template>
+    </todo-list>
 
-    后备内容
-    <current-user v-slot="{user={firstName:'Guest'}}">
-        {{user.firstName}}
-    </current-user>
+    只要出现多个插槽，请始终为所有的插槽使用完整的基于 template> 的语法
+    <todo-list>
+        <template v-slot:default="slotProps">
+            <i class="fas fa-check"></i>
+            <span class="green">{{ slotProps.item }}</span>
+        </template>
+
+        <template v-slot:other="otherSlotProps">
+            ...
+        </template>
+    </todo-list>
+
+   解构插槽 Prop
+   作用域插槽的内部工作原理是将你的插槽内容包括在一个传入单个参数的函数里
+   <todo-list v-slot="{ item }">
+    <i class="fas fa-check"></i>
+    <span class="green">{{ item }}</span>
+  </todo-list>
+
+  在该插槽提供了多个 prop 的时候。它同样开启了 prop 重命名等其它可能
+  <todo-list v-slot="{ item: todo }">
+    <i class="fas fa-check"></i>
+    <span class="green">{{ todo }}</span>
+  </todo-list>
+
+  你甚至可以定义备用内容，用于插槽 prop 是 undefined 的情形
+  <todo-list v-slot="{ item = 'Placeholder' }">
+    <i class="fas fa-check"></i>
+    <span class="green">{{ item }}</span>
+  </todo-list>
 </body>
 
 </html>

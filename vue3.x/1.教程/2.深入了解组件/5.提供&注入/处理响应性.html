@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    父组件有一个 provide 选项来提供数据，子组件有一个 inject 选项来开始使用这个数据。
+
+</head>
+
+<body>
+    provide: {
+    user: 'John Doe'
+    },
+
+    provide() {
+    return {
+    todoLength: this.todos.length
+    }
+    },
+
+
+    处理响应性
+    <script>
+        app.component('todo-list', {
+            // ...
+            provide() {
+                return {
+                    todoLength: Vue.computed(() => this.todos.length)
+                }
+            }
+        })
+
+        app.component('todo-list-statistics', {
+            inject: ['todoLength'],
+            created() {
+                console.log(`Injected property: ${this.todoLength.value}`) // > Injected property: 5
+            }
+        })
+    </script>
+</body>
+
+</html>
