@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../../vue.js"></script>
+</head>
+
+<body>
+    <div style="position: relative;" id="wrap">
+        <h3>Tooltips with Vue 3 Teleport</h3>
+        <div>
+            <modal-button></modal-button>
+        </div>
+    </div>
+    <script>
+        const app = Vue.createApp({});
+
+        app.component('modal-button', {
+            template: `
+            <button @click="modalOpen = true">
+                Open full screen modal!
+            </button>
+
+            <div v-if="modalOpen" class="modal">
+                <div>
+                    I'm a modal! 
+                    <button @click="modalOpen = false">
+                        Close
+                    </button>
+                </div>
+            </div>
+            `,
+            data() {
+                return {
+                    modalOpen: false
+                }
+            }
+        }).mount('#wrap')
+    </script>
+</body>
+
+</html>

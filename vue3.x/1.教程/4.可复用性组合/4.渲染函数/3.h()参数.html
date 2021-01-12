@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+h() 函数是一个用于创建 vnode 的实用程序。也许可以更准确地将其命名为 createVNode()，
+但由于频繁使用和简洁，它被称为 h() 。它接受三个参数
+
+
+<body>
+    <script>
+        // @returns {VNode}
+        h(
+            // {String | Object | Function | null} tag
+            // 一个 HTML 标签名、一个组件、一个异步组件，或者 null。
+            // 使用 null 将会渲染一个注释。
+            //
+            // 必需的。
+            'div',
+
+            // {Object} props
+            // 与 attribute、prop 和事件相对应的对象。
+            // 我们会在模板中使用。
+            //
+            // 可选的。
+            {},
+
+            // {String | Array | Object} children
+            // 子 VNodes, 使用 `h()` 构建,
+            // 或使用字符串获取 "文本 Vnode" 或者
+            // 有 slot 的对象。
+            //
+            // 可选的。
+            [
+                'Some text comes first.',
+                h('h1', 'A headline'),
+                h(MyComponent, {
+                    someProp: 'foobar'
+                })
+            ]
+        )
+    </script>
+</body>
+
+</html>

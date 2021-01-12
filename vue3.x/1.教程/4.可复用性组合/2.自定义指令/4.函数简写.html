@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    在很多时候，你可能想在mounted和updated时触发相同行为，
+    而不关心其它的钩子
+    <script>
+        app.directive('pin', (el, binding) => {
+            el.style.position = 'fixed';
+            const s = binding.arg || 'top';
+            el.style[s] = binding.value + 'px';
+        })
+    </script>
 </body>
+
 </html>

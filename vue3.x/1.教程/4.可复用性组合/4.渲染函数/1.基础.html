@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="../../../../vue2.x/vue.js"></script>
+    <script src="../../../vue.js"></script>
 </head>
 Vue 推荐在绝大多数情况下使用模板来创建你的 HTML。然而在一些场景中，
 你真的需要 JavaScript 的完全编程的能力。这时你可以用渲染函数，它比模板更接近编译器。
@@ -16,24 +16,25 @@ Vue 推荐在绝大多数情况下使用模板来创建你的 HTML。然而在�
         <anchored-heading :level="1">Hello world!</anchored-heading>
     </div>
     <script>
-        Vue.component('anchored-heading', {
-            render: function (createElement) {
-                return createElement(
+        Vue.createApp({}).component('anchored-heading', {
+            render() {
+                const { h } = Vue;
+
+                return h(
                     'h' + this.level, // 标签名称
-                    this.$slot.default // 子节点数组
+                    {},
+                    this.$slots.default() // 子节点数组
                 )
             },
             props: {
                 level: {
-                    type: 'Number',
+                    type: Number,
                     required: true,
                 }
             }
-        })
+        }).mount('#app')
 
-        new Vue({
-            el: '#app',
-        })
+       
     </script>
 </body>
 

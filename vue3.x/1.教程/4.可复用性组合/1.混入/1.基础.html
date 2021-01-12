@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="../../../../vue2.x/vue.js"></script>
+    <script src="../../../vue.js"></script>
 </head>
 混入(mixni)提供了一种非常灵活的方式,来分发vue组件的可复用功能.
 一个混入对象可以包含任意组件选项. 当组件使用混入对象时,所有混入对象的选项将被'混合'进入该组件本身的选项
@@ -25,11 +25,9 @@
         }
 
         //定义一个使用混入对象的组件
-        var Component = Vue.extend({
+        var app = Vue.createApp({
             mixins: [myMixin]
         })
-
-        var component = new Component()//hello from mixin
     </script>
 </body>
 

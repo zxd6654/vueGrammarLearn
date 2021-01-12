@@ -7,8 +7,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-混入也可以进行全局注册。使用时格外小心！一旦使用全局混入，它将影响每一个之后创建的 Vue 实例。
+混入也可以进行全局注册。使用时格外小心！一旦使用全局混入，它将影响每一个之后创建的组件。
 使用恰当时，这可以用来为自定义选项注入处理逻辑。
+
+<script>
+    const app = Vue.createApp({
+        myOption: 'hello'
+    })
+
+    app.mixin({
+        created() {
+            const myOption = this.$option.myOption;
+            if (myOption) {
+                console.log(myOption)
+            }
+        }
+    })
+
+    app.component('test-component', {
+        myOption: 'hello from component'
+    })
+
+    app.mount('#mixins-global')
+</script>
 
 <body>
 

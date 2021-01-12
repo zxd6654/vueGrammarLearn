@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="../../../../vue2.x/vue.js"></script>
+    <script src="../../../vue.js"></script>
 </head>
 除了核心内置的指令(v-model等),vue也允许注册自定义指令
 注意，在 Vue2.0 中，代码复用和抽象的主要形式是组件。
@@ -19,25 +19,38 @@
 
     <script>
         //注册一个全局自定义指令 v-focus
-        Vue.directive('focus', {
+        Vue.createApp({}).directive('focus', {
             // 当被绑定的元素插入到 DOM 中时……
-            inserted: function (el) {
+            mounted: function (el) {
                 el.focus();
             }
         })
 
-        //如果想注册局部指令，组件中也接受一个 directives 的选项：
-        // directives: {
-        //         focus: {
-        //             // 指令的定义
-        //             inserted: function (el) {
-        //                 el.focus()
-        //             }
-        //         }
-        //     }
+            //如果想注册局部指令，组件中也接受一个 directives 的选项：
+            // directives: {
+            //         focus: {
+            //             // 指令的定义
+            //             inserted: function (el) {
+            //                 el.focus()
+            //             }
+            //         }
+            //     }
 
-        new Vue({
-            el: '#app'
+            .mount(
+                '#app'
+            )
+    </script>
+
+    局部注册
+    <script>
+        Vue.createApp({
+            directives:{
+                focus:{
+                    mounted(el){
+                        el.focus()
+                    }
+                }
+            }
         })
     </script>
 </body>
