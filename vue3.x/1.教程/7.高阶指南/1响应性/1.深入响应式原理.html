@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+
+<body>
+Vue如何追踪变化
+当把一个普通的js对象作为data选项传给应用或组件实例的时候，
+Vue会使用带有getter和setter的处理程序便利其所有property
+并将其转换为Proxy这是 ES6 仅有的特性，但是我们在 Vue 3 版本也使用了 
+Object.defineProperty 来支持 IE 浏览器。
+两者具有相同的 Surface API，但是 Proxy 版本更精简，同时提升了性能。
+
+Proxy是一个包含另一个对象或函数并允许你对其进行拦截的对象
+</body>
+
+</html>

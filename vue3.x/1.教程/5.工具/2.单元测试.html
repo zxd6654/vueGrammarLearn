@@ -7,8 +7,45 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-Vue CLI 拥有开箱即用的通过 Jest 或 Mocha 进行单元测试的内置选项。我们还有官方的 Vue Test Utils 提供更多详细的指引和自定义设置。
+尽管测试的流派有很多，它们在 web 应用这个领域里主要有三大类：
+单元测试
+组件测试
+端到端测试
 
+
+单元测试
+单元测试允许你将独立单元的代码进行隔离测试，其目的是为开发者提供对代码的信心
+Jest
+Jest 是一个专注于简易性的 JavaScript 测试框架。
+一个其独特的功能是可以为测试生成快照 (snapshot)，以提供另一种验证应用单元的方法。
+
+Mocha
+Mocha 是一个专注于灵活性的 JavaScript 测试框架。
+因为其灵活性，它允许你选择不同的库来满足诸如侦听
+(如 Sinon) 和断言 (如 Chai) 等其它常见的功能。
+另一个 Mocha 独特的功能是它不止可以在 Node.js 里运行测试，
+还可以在浏览器里运行测试。
+
+
+组件测试
+测试大多数 Vue 组件时都必须将它们挂载到 DOM (虚拟或真实) 上，才能完全断言它们正在工作。
+Vue Testing Library
+
+Vue test Utils
+
+
+端到端(E2E)测试
+虽然单元测试为开发者提供了一定程度的信心，
+但是单元测试和组件测试在部署到生产环境时提供应用整体覆盖的能力是有限的。
+因此，端到端测试可以说从应用最重要的方面进行测试覆盖：当用户实际使用应用时会发生什么。
+
+Cypress.io
+
+Nightwatch.js
+
+Puppeteer
+
+TestCafe
 <body>
 
 </body>

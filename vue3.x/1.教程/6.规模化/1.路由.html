@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="../../../vue2.x/vue.js"></script>
+    <script src="../../vue.js"></script>
 </head>
 对于大多数单页面应用，都推荐使用官方支持的 vue-router 库。
 
@@ -25,18 +25,19 @@
             '/about': About
         }
 
-        new Vue({
-            el: '#app',
-            data: {
-                currentRoute: window.location.pathname
+        Vue.createApp({
+            data() {
+                return {
+                    currentRoute: window.location.pathname
+                }
             },
             computed: {
                 ViewComponent() {
                     return routes[this.currentRoute] || NotFound
                 }
             },
-            render(h) { return h(this.ViewComponent) }
-        })
+            render() { return Vue.h(this.ViewComponent) }
+        }).mount('#app')
     </script>
 </body>
 
