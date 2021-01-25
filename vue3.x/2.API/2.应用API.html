@@ -1,11 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    const app = createApp({})
+
+    1 app.component 注册或检索全局组件
+
+    2 app.config={} 包含应用配置的对象
+
+    3 app.directive 注册或检索全局指令
+
+    4 app.mixin 全局混入（不建议在应用代码中使用）
+
+    5 app.mount 将应用实例的根组件挂载在提供的 DOM 元素上。
+
+    6 app.provide 设置一个可以被注入到应用范围内所有组件中的值。组件应该使用 inject 来接收提供的值。
+
+    7 app.unmount 在提供的DOM元素上卸载应用实例的跟组件
+
+    8 app.use 安装 Vue.js 插件。
 </body>
+
 </html>

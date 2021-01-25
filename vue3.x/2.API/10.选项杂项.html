@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../vue.js"></script>
+    name
+    只有作为组件选项时起作用，允许组件模板递归调用自身
+    指定 name 选项的另一个好处是便于调试。
+
+    delimiters array
+    改变纯文本插入分隔符
+
+    inheritAttrs boolean
+    为false时,组件传递的默认行为不会应用到组件的根元素上
+</head>
+
+<body>
+    <div id="app">
+        <span>
+            ${message}
+        </span>
+    </div>
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    message: 'hello world!'
+                }
+            },
+            delimiters: ['${', '}']
+        }).mount('#app')
+    </script>
+</body>
+
+</html>

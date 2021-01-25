@@ -11,17 +11,14 @@
 <body>
     *1 data
     组件的定义只接受 function。
-    a Vue 实例的数据对象。Vue 将会递归将 data 的属性转换为 getter/setter，从而让 data 的属性能够响应数据变化。
-    b 一旦观察过，不需要再次在数据对象上添加响应式属性。因此推荐在创建实例之前，就声明所有的根级响应式属性。
-    c 以 _ 或 $ 开头的 property 不会被 Vue 实例代理，因为它们可能和 Vue 内置的 property、API 方法冲突。你可以使用例如 vm.$data._property 的方式访问这些 property。
-    d 如果需要，可以通过将 vm.$data 传入 JSON.parse(JSON.stringify(...)) 得到深拷贝的原始数据对象。
+    a 返回组件实例的 data 对象的函数。在 data 中，我们不建议观察具有自身状态行为的对象，如浏览器 API 对象和原型 property。一个好主意是这里只有一个表示组件 data 的普通对象。
+    b 一旦观察过，你就无法在根数据对象上添加响应式 property。因此推荐在创建实例之前，就声明所有的根级响应式 property。
+    c 实例创建之后，可以通过 vm.$data 访问原始数据对象。组件实例也代理了 data 对象上所有的 property，因此访问 vm.a 等价于访问 vm.$data.a。
+    d 以 _ 或 $ 开头的 property 不会被组件实例代理，因为它们可能和 Vue 内置的 property、API 方法冲突。你可以使用例如 vm.$data._property 的方式访问这些 property。
 
     *2 props
-    props 可以是数组或对象，用于接收来自父组件的数据。
-
-    3 propsData
-    只用于 new 创建的实例中
-    创建实例时传递 props。主要作用是方便测试。
+    props 可以是数组或对象，
+    用于接收来自父组件的数据。
 
     *4 computed
     a计算属性将被混入到 Vue 实例中。所有 getter 和 setter 的 this 上下文自动地绑定为 Vue 实例。
@@ -36,6 +33,9 @@
     一个对象，键是需要观察的表达式，值是对应回调函数。值也可以是方法名，或者包含选项的对象。
     Vue 实例将会在实例化时调用 $watch()，遍历 watch 对象的每一个属性。
     (最好不要使用箭头函数(因为箭头函数会把this指向它所在的作用域))
+
+    7 emits
+    emits 可以是数组或对象，从组件触发自定义事件，emits 可以是简单的数组，或者对象作为替代，允许配置和事件验证。
 
     <script>
 

@@ -21,7 +21,7 @@
 (该钩子在服务器端渲染期间不被调用。)
 
 4 mounted
-el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用该钩子。
+实例被挂载后调用，这时 Vue.createApp({}).mount() 被新创建的 vm.$el 替换了。如果根实例挂载到了一个文档内的元素上，当 mounted 被调用时 vm.$el 也在文档内。
 (该钩子在服务器端渲染期间不被调用。)
 
 5 beforeUpdate
@@ -41,17 +41,22 @@ keep-alive 组件激活时调用。
 keep-alive 组件停用时调用。
 该钩子在服务器端渲染期间不被调用。
 
-9 beforeDestroy
+9 beforeUnmount
 实例销毁之前调用。在这一步，实例仍然完全可用。
 该钩子在服务器端渲染期间不被调用。
 
-10 destroyed
+10 unmounted
 Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。
 该钩子在服务器端渲染期间不被调用。
 
 11 errorCaptured:
 当捕获一个来自子孙组件的错误时被调用。
 
+12 renderTracked
+跟踪虚拟 DOM 重新渲染时调用。
+
+13 renderTriggered
+当虚拟 DOM 重新渲染为 triggered.Similarly 为renderTracked，接收 debugger event 作为参数。
 <body>
 
 </body>

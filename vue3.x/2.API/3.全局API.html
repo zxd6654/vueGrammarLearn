@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    1 createApp 返回一个提供应用上下文的应用实例。应用实例挂载的整个组件树共享同一个上下文
+    Vue.createApp({})
+
+    2 h 它的目的是用于手动编写的渲染函数
+    render() {
+    return Vue.h('h1', {}, 'Some title')
+    }
+
+    3 defineComponent defineComponent 只返回传递给它的对象。
+
+    4 defineAsyncComponent 创建一个只有在需要时才会加载的异步组件 ***
+
+    5 resolveComponent 如果在当前应用实例中可用，则允许按名称解析 component。 只能在 render 或 setup 函数中使用。
+
+    6 resolveDynamicComponent 允许使用与 component :is="" 相同的机制来解析一个 component
+
+    7 resolveDirective 如果在当前应用实例中可用，则允许通过其名称解析一个 directive
+
+    8 withDirectives 允许将指令应用于 VNode。返回一个包含应用指令的 VNode。
+
+    9 createRenderer 
+
+    10 nextTick
+</body>
+
+</html>
