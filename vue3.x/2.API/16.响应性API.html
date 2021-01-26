@@ -6,6 +6,48 @@
     <title>Document</title>
 </head>
 <body>
+    ###响应性基础API
     
+    1 reactive 返回对象的响应式副本
+
+    2 readonly 获取一个对象或ref并返回原始proxy的只读proxy。
+
+    3 isProxy 检查对象是否是由reactive或readonly创建的proxy。
+    
+    4 isReactive 检查对象是否是 reactive创建的响应式 proxy。
+
+    5 isReadonly 检查对象是否是由readonly创建的制度proxy。
+
+    6 toRaw 返回 reactive 或 readonly proxy 的原始对象。
+
+    7 markRaw 标记一个对象，使其永远不会转换为 proxy。
+
+    8 shallowReactive 创建一个响应式 proxy，跟踪其自身 property 的响应性，但不执行嵌套对象的深度响应式转换
+
+    9 shallowReadonly 创建一个 proxy，使其自身的 property 为只读，但不执行嵌套对象的深度只读转换 
+
+
+    ###Refs
+
+    1 ref 接受一个内部值并返回一个响应式且可变的 ref 对象。
+
+    2 unref 如果参数为 ref，则返回内部值，否则返回参数本身。
+
+    3 toRef 可以用来为源响应式对象上的 property 新创建一个 ref。
+
+    4 toRefs 将响应式对象转换为普通对象，其中结果对象的每个 property 都是指向原始对象相应 property 的ref。
+
+    5 isRef Checks if a value is a ref object。
+
+    6 customRef 创建一个自定义的 ref，并对其依赖项跟踪和更新触发进行显式控制。
+
+    7 shallowRef 创建一个 ref，它跟踪自己的 .value 更改，但不会使其值成为响应式的。
+
+    8 triggerRef 手动执行与 shallowRef](#shallowref) 关联的任何效果。
+
+
+    ###Computed与watch
+
+    1 
 </body>
 </html>
