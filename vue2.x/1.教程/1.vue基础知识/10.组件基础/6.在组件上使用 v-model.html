@@ -25,6 +25,9 @@
     </script>
 
     在组件使用v-model
+
+    将其 value attribute 绑定到一个名叫 value 的 prop 上
+    在其 input 事件被触发时，将新的值通过自定义的 input 事件抛出
     <div id="model-demo">
         <custom-input v-model="searchText"></custom-input>
     </div>
