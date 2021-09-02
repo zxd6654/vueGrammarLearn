@@ -18,28 +18,28 @@
 </head>
 
 <body>
-<div id="app">
-    <base-input @focus="onFocus"></base-input>
-</div>
-<script>
-    Vue.component('base-input', {
-        inheritAttrs: false,
-        props:['label','value'],
-        computed: {
-            inputListeners: function () {
-                let vm = this;
-                return Object.assign(
-                    {},
-                    this.$listeners,//我们从父级添加所有的监听器
-                    {
-                        input: function (event) {
-                            vm.$emit('input', event.target.value)
+    <div id="app">
+        <base-input @focus="onFocus"></base-input>
+    </div>
+    <script>
+        Vue.component('base-input', {
+            inheritAttrs: false,
+            props: ['label', 'value'],
+            computed: {
+                inputListeners: function () {
+                    let vm = this;
+                    return Object.assign(
+                        {},
+                        this.$listeners,//我们从父级添加所有的监听器
+                        {
+                            input: function (event) {
+                                vm.$emit('input', event.target.value)
+                            }
                         }
-                    }
-                )
-            }
-        },
-        template: `
+                    )
+                }
+            },
+            template: `
             <label>
                 {{ label }}
                 <input
@@ -48,16 +48,16 @@
                         v-on="inputListeners"
                 >
             </label>`
-    })
-    new Vue({
-        el: '#app',
-        methods:{
-            onFocus(){
-                console.log(1);
+        })
+        new Vue({
+            el: '#app',
+            methods: {
+                onFocus() {
+                    console.log(1);
+                }
             }
-        }
-    })
-</script>
+        })
+    </script>
 </body>
 
 </html>
