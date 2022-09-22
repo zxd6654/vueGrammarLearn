@@ -39,7 +39,21 @@
 
     4 API风格
     vue得组件可以按两种不同得风格书写： 选项式API和组合式API
-   
+    选项式 API 是在组合式 API 的基础上实现的
+
+    <script setup>
+        import { ref, onMounted } from "vue";
+
+        const count=ref(0);
+
+        function increment(){
+            count.value++
+        }
+
+        onMounted(()=>{
+            
+        })
+    </script>
 </body>
 
 </html>
