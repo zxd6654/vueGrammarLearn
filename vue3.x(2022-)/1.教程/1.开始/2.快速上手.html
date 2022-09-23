@@ -1,12 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    创建一个 Vue 应用
+    1创建一个 Vue 应用 npm init vue@latest vite+vue
+
+    2通过 CDN 使用 Vue
+
+    2-1使用全局构建版本
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <div id="app">{{ message }}</div>
+
+    <script>
+        const { createApp } = Vue
+
+        createApp({
+            data() {
+                return {
+                    message: 'Hello Vue!'
+                }
+            }
+        }).mount('#app')
+    </script>
+
+    2-2使用es模块构建版本
+    注意我们使用了 script type="module">，且导入的 CDN URL 指向的是 Vue 的 ES 模块构建版本。
+    <div id="app1">{{ message }}</div>
+
+    <script type="module">
+        import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+
+        createApp({
+            data() {
+                return {
+                    message: 'Hello Vue!'
+                }
+            }
+        }).mount('#app1')
+    </script> -->
+
+    2-3启用import maps(导入映射表)
+    <script type="importmap">
+        {
+            "imports": {
+              "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+            }
+          }
+    </script>
+
+    <div id="app2">{{message}}</div>
+
+    <script type="module">
+        import { createApp } from 'vue'
+
+        createApp({
+            data() {
+                return {
+                    message: 'Hello Vue!'
+                }
+            }
+        }).mount('#app2')
+    </script>
 </body>
+
 </html>
