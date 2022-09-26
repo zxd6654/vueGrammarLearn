@@ -1,31 +1,49 @@
 <!DOCTYPE html>
 <html xmlns:v-bind="http://www.w3.org/1999/xhtml">
+
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
     <script src="../../../vue.js"></script>
     <style>
-        .class1{
+        .class1 {
             background: #444;
             color: #ffffff;
         }
+
+        .class2 {
+            color: pink
+        }
     </style>
 </head>
+
 <body>
-<div id="app">
-    <label for="r1">修改颜色</label>
-    <input type="checkbox" v-model="class1" id="r1"/>
-    <div v-bind:class="{'class1':class1}">
-        你好，世界
+    <div id="app">
+        <label for="r1">修改颜色</label>
+        <input type="checkbox" v-model="class1" id="r1" />
+        <div v-bind:class="{'class1':class1}">
+            你好，世界
+        </div>
+        <div v-bind:class="class1?'class1':''">
+            你好，世界
+        </div>
+        <div v-bind:class="[class1?'class1':'','class2']">
+            你好，世界
+        </div>
+        <div v-bind="objectOfAttrs">vue2绑定多个值</div>
     </div>
-</div>
-<script>
-    new Vue({
-        el:'#app',
-        data:{
-            class1:false
-        }
-    });
-</script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                class1: false,
+                objectOfAttrs: {
+                    id: 'container',
+                    class: 'wrapper'
+                }
+            }
+        });
+    </script>
 </body>
+
 </html>
