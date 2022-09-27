@@ -36,6 +36,39 @@ Vue 无法检测到对象属性的添加或删除。由于 Vue 会在初始化�
 
 Vue.nextTick(callback)。
 
+
+<script src="../../vue.js"></script>
+<div id="app"></div>
+<script>
+    // new Vue({
+    //     el: '#app',
+    //     data() {
+    //         return {
+    //             someObject: {}
+    //         }
+    //     },
+    //     mounted() {
+    //         const newObject = {}
+    //         this.someObject = newObject
+
+    //         console.log(newObject === this.someObject) // false
+    //     }
+    // })
+    new Vue({
+        data() {
+            return {
+                someObject: {}
+            }
+        },
+        mounted() {
+            const newObject = {}
+            this.someObject = newObject
+
+            console.log(newObject === this.someObject) // false
+        }
+    }).$mount('#app')
+</script>
+
 <body>
 
 </body>
