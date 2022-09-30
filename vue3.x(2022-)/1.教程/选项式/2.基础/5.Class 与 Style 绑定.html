@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     绑定html class
     绑定对象
     绑定数组
+    在组件上使用
+    对于只有一个根元素的组件，当你使用了 class attribute 时，这些 class 会被添加到根元素上，并与该元素上已有的 class 合并。
+    如果你的组件有多个根元素，你将需要指定哪个根元素来接收这个 class。你可以通过组件的 $attrs 属性来实现指定
+
+    绑定内联样式
+    绑定对象
+    ***绑定数组
+    <!--<div :style="[baseStyles, overridingStyles]"></div> -->
+    自动前缀
+    样式多值
+
 </body>
+
 </html>
