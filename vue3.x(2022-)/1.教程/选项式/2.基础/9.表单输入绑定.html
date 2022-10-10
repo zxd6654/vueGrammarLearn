@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    v-model 会忽略任何表单元素上初始的 value、checked 或 selected attribute。
+    它将始终将当前绑定的 JavaScript 状态视为数据的正确来源。
+    你应该在 JavaScript 中使用data 选项来声明该初始值。
+
+    基本用法
+
+    值绑定
+    <input type="checkbox" v-model="toggle" true-value="yes" false-value="no" />
+    true-value 和 false-value 是 Vue 特有的 attributes，仅支持和 v-model 配套使用。
+    这里 toggle 属性的值会在选中时被设为 'yes'，取消选择时设为 'no'。你同样可以通过 v-bind 将其绑定为其他动态值：
+
+    <select v-model="selected">
+        <!-- 内联对象字面量 -->
+        <option :value="{ number: 123 }">123</option>
+    </select>
+
+    修饰符
+    .lazy .number .trim
+
+    组件上的v-model
+</body>
+
+</html>

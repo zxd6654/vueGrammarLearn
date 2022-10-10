@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+访问模板引用
+this.$refs
+
+v-for中得模板引用
+当在 v-for 中使用模板引用时，相应的引用中包含的值是一个数组：
+应该注意的是，ref 数组并不保证与源数组相同的顺序。  
+
+函数模板引用
+除了使用字符串值作名字，ref attribute 还可以绑定为一个函数，会在每次组件更新时都被调用。该函数会收到元素引用作为其第一个参数：
+<input :ref="(el) => { /* 将 el 赋值给一个数据属性或 ref 变量 */ }">
+
+组件上得ref
+模板引用也可以被用在一个子组件上。这种情况下引用中获得的值是组件实例：
+
+***expose 选项可以用于限制对子组件实例的访问：
+
+js
+export default {
+  expose: ['publicData', 'publicMethod'],
+  data() {
+    return {
+      publicData: 'foo',
+      privateData: 'bar'
+    }
+  },
+  methods: {
+    publicMethod() {
+      /* ... */
+    },
+    privateMethod() {
+      /* ... */
+    }
+  }
+}
+在上面这个例子中，父组件通过模板引用访问到子组件实例后，仅能访问 publicData 和 publicMethod。
+</html>
