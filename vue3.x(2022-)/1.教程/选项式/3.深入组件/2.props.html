@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Props声明
+
+    传递props的细节
+    number
+    <!-- 虽然 `42` 是个常量，我们还是需要使用 v-bind -->
+    <!-- 因为这是一个 JavaScript 表达式而不是一个字符串 -->
+    <BlogPost :likes="42" />
+
+    boolean
+    <!-- 仅写上 prop 但不传值，会隐式转换为 `true` -->
+    <BlogPost is-published />
+
+    <!-- 虽然 `false` 是静态的值，我们还是需要使用 v-bind -->
+    <!-- 因为这是一个 JavaScript 表达式而不是一个字符串 -->
+    <BlogPost :is-published="false" />
+
+    使用一个对象绑定多个prop
+    如果你想要将一个对象的所有属性都当作 props 传入，
+    你可以使用没有参数的 v-bind，即只使用 v-bind 而非 :prop-name。
+    <BlogPost v-bind="post" />
+
+    单向数据流
+    所有的 props 都遵循着单向绑定原则，props 因父组件的更新而变化，
+    自然地将新的状态向下流往子组件，而不会逆向传递。
+    这避免了子组件意外修改父组件的状态的情况，不然应用的数据流将很容易变得混乱而难以理解。
+
+    更改一个 prop 的需求通常来源于以下两种场景：
+
+    1 prop 被用于传入初始值；而子组件想在之后将其作为一个局部数据属性。
+    2 需要对传入的 prop 值做进一步的转换。
+
+    porps校验
+
+    所有 prop 默认都是可选的，除非声明了 required: true。
+
+    除 Boolean 外的未传递的可选 prop 将会有一个默认值 undefined。
+
+    Boolean 类型的未传递 prop 将被转换为 false。
+    你应该为它设置一个 default 值来确保行为符合预期。
+
+    如果声明了 default 值，那么在 prop 的值被解析为 undefined 时，
+    无论 prop 是未被传递还是显式指明的 undefined，都会改为 default 值。
+    当 prop 的校验失败后，Vue 会抛出一个控制台警告 (在开发模式下)。
+
+    注意 prop 的校验是在组件实例被创建之前，所以实例的属性 (比如 data、computed 等)
+    将在 default 或 validator 函数中不可用。
+    <script>
+        export default {
+            props: {
+                // 基础类型检查
+                //（给出 `null` 和 `undefined` 值则会跳过任何类型检查）
+                propA: Number,
+                // 多种可能的类型
+                propB: [String, Number],
+                // 必传，且为 String 类型
+                propC: {
+                    type: String,
+                    required: true
+                },
+                // Number 类型的默认值
+                propD: {
+                    type: Number,
+                    default: 100
+                },
+                // 对象类型的默认值
+                propE: {
+                    type: Object,
+                    // 对象或者数组应当用工厂函数返回。
+                    // 工厂函数会收到组件所接收的原始 props
+                    // 作为参数
+                    default(rawProps) {
+                        return { message: 'hello' }
+                    }
+                },
+                // 自定义类型校验函数
+                propF: {
+                    validator(value) {
+                        // The value must match one of these strings
+                        return ['success', 'warning', 'danger'].includes(value)
+                    }
+                },
+                // 函数类型的默认值
+                propG: {
+                    type: Function,
+                    // 不像对象或数组的默认，这不是一个工厂函数。这会是一个用来作为默认值的函数
+                    default() {
+                        return 'Default function'
+                    }
+                }
+            }
+        }
+
+    </script>
+
+    Boolean类型转换
+    
+</body>
+
+</html>

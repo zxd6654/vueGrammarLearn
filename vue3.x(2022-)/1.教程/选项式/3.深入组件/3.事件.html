@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+
+<body>
+    触发与监听事件
+
+    事件参数
+
+    声明触发的事件（在子组件中）
+    export default {
+    emits: ['inFocus', 'submit'],
+    submit(payload) {
+    // 通过返回值为 `true` 还是为 `false` 来判断
+    // 验证是否通过
+    },
+    submit:()=>{},
+    submit:function(){}
+    }
+
+    事件校验
+    export default {
+    emits:{
+    submit({email,password}){
+    if(email&&password){
+    return true
+    }else{
+    return false
+    }
+    }
+    }
+    }
+
+    配合v-model使用
+
+    在组件上实现
+    <!-- CustomInput.vue -->
+    <script>
+        // export default {
+        //   props: ['modelValue'],
+        //   emits: ['update:modelValue']
+        // }
+    </script>
+
+    <template>
+        <input :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" />
+    </template>
+    现在 v-model 也可以在这个组件上正常工作了：
+    template
+    <CustomInput v-model="searchText" />
+
+    在组件内实现
+    <!-- CustomInput.vue -->
+
+    export default {
+    props: ['modelValue'],
+    emits: ['update:modelValue'],
+    computed: {
+    value: {
+    get() {
+    return this.modelValue
+    },
+    set(value) {
+    this.$emit('update:modelValue', value)
+    }
+    }
+    }
+    }
+
+
+    <template>
+        <input v-model="value" />
+    </template>
+
+
+    V-model参数
+    默认情况下，v-model 在组件上都是使用 modelValue 作为 prop，并以 update:modelValue 作为对应的事件。
+    我们可以通过给 v-model 指定一个参数来更改这些名字
+
+    多个model绑定
+
+
+    ***处理v-model修饰符
+    <MyComponent v-model.capitalize="myText" />
+    <script>
+        export default {
+            props: {
+                modelValue: String,
+                modelModifiers: {
+                    default: () => { }
+                }
+            },
+            emits: ["update:modelValue"],
+            computed: {
+                value: {
+                    get() {
+                        return this.modelValue
+                    },
+                    set(value) {
+                        this.emitValue({ target: { value } })
+                    }
+                }
+            },
+            methods: {
+                emitValue(e) {
+                    let value = e.target.value;
+                    if (this.modelModifiers.capitalize) {
+                        value = value.charAt(0).toUpperCase() + value.slice(1)
+                    }
+                    this.$emit("update:modelValue", value)
+                }
+            }
+        }
+    </script>
+    <template>
+        <input type="text" :value="modelValue" @input="emitValue">
+        <input type="text" v-model="value">
+    </template>
+</body>
+
+</html>
