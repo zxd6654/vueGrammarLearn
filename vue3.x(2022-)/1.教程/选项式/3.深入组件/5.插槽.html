@@ -11,8 +11,36 @@
 <body>
     插槽内容与出口
     slot> 元素是一个插槽出口 (slot outlet)，标示了父元素提供的插槽内容 (slot content) 将在哪里被渲染。
+    我们可以传入多个元素，甚至是组件
 
+    渲染作用域
+    插槽内容无法访问子组件的数据。
 
+    默认内容
+
+    具名插槽
+    <BaseLayout>
+        <template v-slot:header>
+            <!-- header 插槽的内容放这里 -->
+        </template>
+    </BaseLayout>
+    v-slot 有对应的简写 #，因此 <template v-slot:header></template> 可以简写为 <template #header></template>
+
+    动态插槽名
+    <template v-slot:[dynamicSlotName]>
+        ...
+    </template>
+
+    作用域插槽
+    v-slot="slotProps"
+    
+    具名作用域插槽
+
+    高级列表组件示例
+
+    无渲染组件
+    一些组件可能只包括了逻辑而不需要自己渲染内容，视图输出通过作用域插槽全权交给了消费者组件。
+    我们将这种类型的组件称为无渲染组件。
 </body>
 
 </html>
