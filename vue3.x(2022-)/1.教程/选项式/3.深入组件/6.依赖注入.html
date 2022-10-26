@@ -11,6 +11,76 @@
 <body>
     Prop 逐级透传问题
     
+    Provide (提供)
+    export default {
+        provide: {
+          message: 'hello!'
+        }
+
+        provide() {
+            // 使用函数的形式，可以访问到 `this` 请注意这不会使注入保持响应性
+            return {
+              message: this.message
+            }
+          }
+      }
+
+    Inject（注入） 
+    export default {
+        inject: ['message'],
+        data() {
+          return {
+            // 基于注入值的初始数据   注入会在组件自身的状态之前被解析
+            fullMessage: this.message
+          }
+        }
+      } 
+
+    注入别名
+    export default {
+        inject: {
+          /* 本地属性名 */ localMessage: {
+            from: /* 注入来源名 */ 'message'
+          }
+        }
+      }  
+
+    注入默认值
+    export default {
+      // 当声明注入的默认值时
+      // 必须使用对象形式
+      inject: {
+        message: {
+          from: 'message', // 当与原注入名同名时，这个属性是可选的
+          default: 'default value'
+        },
+        user: {
+          // 对于非基础类型数据，如果创建开销比较大，或是需要确保每个组件实例
+          // 需要独立数据的，请使用工厂函数
+          default: () => ({ name: 'John' })
+        }
+      }
+    }
+
+   和响应式数据配合使用
+   import { computed } from 'vue'
+
+    export default {
+      data() {
+        return {
+          message: 'hello!'
+        }
+      },
+      provide() {
+        return {
+          // 显式提供一个计算属性
+          message: computed(() => this.message)
+        }
+      }
+    }    
+
+    使用Symbol作注入名
+    
 </body>
 
 </html>
