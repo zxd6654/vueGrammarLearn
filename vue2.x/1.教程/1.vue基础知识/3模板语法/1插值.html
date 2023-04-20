@@ -20,6 +20,8 @@
     3属性
     本文插值不能作用在HTML attribute上,遇到这种情况应该使用v-bind
     html属性中应使用v-bind指令
+    对于布尔 attribute (它们只要存在就意味着值为 true)，v-bind 工作起来略有不同
+    null、undefined 或 false，则 disabled attribute 甚至不会被包含在渲染出来的 button> 元素中。
 
     4使用js表达式
 
