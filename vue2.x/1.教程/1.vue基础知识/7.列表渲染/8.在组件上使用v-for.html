@@ -16,5 +16,18 @@
         v-bind:index="index"
         v-bind:key="item.id"
 ></my-component>
+
+
+注意这里的 is="todo-item" attribute。这种做法在使用 DOM 模板时是十分必要的，因为在 ul 元素内只有 li> 元素会被看作有效内容。
+这样做实现的效果与 todo-item> 相同，但是可以避开一些潜在的浏览器解析错误。
+<ul>
+    <li
+      is="todo-item"
+      v-for="(todo, index) in todos"
+      v-bind:key="todo.id"
+      v-bind:title="todo.title"
+      v-on:remove="todos.splice(index, 1)"
+    ></li>
+  </ul>
 </body>
 </html>

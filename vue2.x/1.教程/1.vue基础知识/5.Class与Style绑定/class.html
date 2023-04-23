@@ -40,7 +40,7 @@
         我们也可以在这里绑定返回对象的计算属性。这是一个常用且强大的模式：
         <div v-bind:class="classObject"></div>
 
-        用在组件上
+        用在组件上 （默认绑定到组件的根元素上）
         <my-component class="baz boo"></my-component>
         <my-component v-bind:class="{ active: isActive }"></my-component>
     </div>
