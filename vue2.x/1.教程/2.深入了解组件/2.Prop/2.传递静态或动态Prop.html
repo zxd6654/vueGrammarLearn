@@ -15,6 +15,12 @@
 
     <!-- 动态赋予一个复杂表达式的值 -->
     <blog-post v-bind:title="post.title + ' by ' + post.author.name"></blog-post>
+
+    传入一个对象的所有 property
+
+    <blog-post v-bind="post"></blog-post>
+    等价于
+    <blog-post v-bind:id="post.id" v-bind:title="post.title"></blog-post>
 </body>
 
 </html>

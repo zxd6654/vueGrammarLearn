@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    插槽 prop 允许我们将插槽转换为可复用的模板，这些模板可以基于输入的 prop 渲染出不同的内容。
+
+    <ul>
+        <li v-for="todo in filteredTodos" v-bind:key="todo.id">
+            <!--
+          我们为每个 todo 准备了一个插槽，
+          将 `todo` 对象作为一个插槽的 prop 传入。
+          -->
+            <slot name="todo" v-bind:todo="todo">
+                <!-- 后备内容 -->
+                {{ todo.text }}
+            </slot>
+        </li>
+    </ul>
+
+
+    <todo-list v-bind:todos="todos">
+        <template v-slot:todo="{ todo }">
+            <span v-if="todo.isComplete">✓</span>
+            {{ todo.text }}
+        </template>
+    </todo-list>
+</body>
+
+</html>

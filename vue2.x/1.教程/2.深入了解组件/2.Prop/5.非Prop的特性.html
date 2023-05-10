@@ -12,13 +12,17 @@
 因为显式定义的 prop 适用于向一个子组件传入信息，然而组件库的作者并不总能预见组件会被用于怎样的场景。
 这也是为什么组件可以接受任意的 attribute，而这些 attribute 会被添加到这个组件的根元素上。
 
+替换/合并已有的 Attribute
 对于绝大多数attribute来说，从外部提供给组件的值替换掉组件内部设置好的值。
 庆幸的是，class和style attribute会稍微只能一下，即两边的值会被合并起来，从而得到最终的值
 
+
+禁用 Attribute 继承
 如果你不希望组件的根元素继承 attribute，你可以在组件的选项中设置 inheritAttrs: false。
 注意 inheritAttrs: false 选项不会影响 style 和 class 的绑定。
 
 $attrs
+
 <body>
 
 </body>
