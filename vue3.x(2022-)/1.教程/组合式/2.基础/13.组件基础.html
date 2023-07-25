@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    定义一个组件
+    当使用构建步骤时，我们一般会将 Vue 组件定义在一个单独的 .vue 文件中，
+    这被叫做单文件组件 (简称 SFC)
+
+    使用组件
+    每当你使用一个组件，就创建了一个新的实例。
+
+    传递props
+    该属性的值可以像其他组件属性一样，在模板和组件的 this 上下文中访问。
+
+    监听事件
+    <script>
+        export default {
+            props: ['title'],
+            emits: ['enlarge-text']
+        }
+    </script>
+
+    通过插槽来分配内容
+
+    动态组件
+
+    DOM 模板解析注意事项
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    v-for
+
+    ***你也可以在定义 v-for 的变量别名时使用解构，和解构函数参数类似
+    <li v-for="{ message } in items">
+        {{ message }}
+    </li>
+
+    <!-- 有 index 索引时 -->
+    <li v-for="({ message }, index) in items">
+        {{ message }} {{ index }}
+    </li>
+
+    你也可以使用 of 作为分隔符来替代 in，这更接近 JavaScript 的迭代器语法：
+    <div v-for="item of items"></div>
+
+    v-for 与对象
+    遍历一个对象的所有属性
+
+    在 v-for 里使用范围值
+    会将该模板基于 1...n 的取值范围重复多次。
+
+    template> 上的 v-for
+
+    v-for 与 v-if
+    ***当它们同时存在于一个节点上时，v-if 比 v-for 的优先级更高。这意味着 v-if 的条件将无法访问到 v-for 作用域内定义的变量别名：
+
+    通过 key 管理状态
+
+    组件上使用v-for
+
+    数组变化检测
+    filter()，concat() 和 slice()，这些都不会更改原数组，而总是返回一个新数组。
+
+</body>
+
+</html>

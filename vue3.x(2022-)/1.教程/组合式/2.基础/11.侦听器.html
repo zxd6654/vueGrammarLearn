@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    watch: {
+    // 每当 question 改变时，这个函数就会执行
+    question(newQuestion, oldQuestion) {
+    if (newQuestion.includes('?')) {
+    this.getAnswer()
+    }
+    },
+    // 注意：只能是简单的路径，不支持表达式。
+    'some.nested.key'(newValue) {
+    // ...
+    },
+
+    深层监听器
+    watch 默认是浅层的：被侦听的属性，仅在被赋新值时，才会触发回调函数——而嵌套属性的变化不会触发
+    watch: {
+    someObject: {
+    handler(newValue, oldValue) {
+    // 注意：在嵌套的变更中，
+    // 只要没有替换对象本身，
+    // 那么这里的 `newValue` 和 `oldValue` 相同
+    },
+    deep: true
+    }
+
+    即时回调的侦听器
+    watch 默认是懒执行的：仅当数据源变化时，才会执行回调。
+    immediate:true
+
+    回调的触发时机
+    默认情况下，用户创建的侦听器回调，都会在 Vue 组件更新之前被调用
+    flush:"post"
+
+    this.$watch
+    this.$watch("question",(newValue)=>{})
+
+    停止侦听器
+    const unwatch = this.$watch('foo', callback)
+
+    // ...当该侦听器不再需要时
+    unwatch()
+
+</body>
+
+</html>
