@@ -38,6 +38,15 @@
             }
         }).mount('#app')
     </script>
+    同名简写​
+    仅支持 3.4 版本及以上
+    <!-- 与 :id="id" 相同 -->
+    <div :id></div>
+
+    <!-- 这也同样有效 -->
+    <div v-bind:id></div>
+
+    当 isButtonDisabled 为真值或一个空字符串 (即 <button disabled="">) 时，元素会包含这个 disabled attribute。而当其为其他假值时 attribute 将被忽略。
 
     使用js表达式
 

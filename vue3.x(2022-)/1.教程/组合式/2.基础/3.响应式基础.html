@@ -14,6 +14,7 @@
     ref() 接收参数，并将其包裹在一个带有 .value 属性的 ref 对象中返回
     要访问组件模板中的 ref，请从组件的 setup() 函数中声明并返回它们：
 
+    注意，在模板中使用 ref 时，我们不需要附加 .value。为了方便起见，当在模板中使用时，ref 会自动解包 (有一些注意事项)。
     <div id="app">{{count}}</div>
     <script type="module">
         import { createApp, ref } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
@@ -28,6 +29,59 @@
             }
         }).mount('#app')
     </script>
+
+    为什么要使用 ref？​
+    你可能会好奇：为什么我们需要使用带有 .value 的 ref，而不是普通的变量？为了解释这一点，我们需要简单地讨论一下 Vue 的响应式系统是如何工作的。
+
+    当你在模板中使用了一个 ref，然后改变了这个 ref 的值时，Vue 会自动检测到这个变化，并且相应地更新 DOM。这是通过一个基于依赖追踪的响应式系统实现的。当一个组件首次渲染时，Vue 会追踪在渲染过程中使用的每一个
+    ref。然后，当一个 ref 被修改时，它会触发追踪它的组件的一次重新渲染。
+
+    在标准的 JavaScript 中，检测普通变量的访问或修改是行不通的。然而，我们可以通过 getter 和 setter 方法来拦截对象属性的 get 和 set
+
+    另一个 ref 的好处是，与普通变量不同，你可以将 ref 传递给函数，同时保留对最新值和响应式连接的访问。当将复杂的逻辑重构为可重用的代码时，这将非常有用。
+
+    深层响应性​
+    Ref 可以持有任何类型的值，包括深层嵌套的对象、数组或者 JavaScript 内置的数据结构，比如 Map。
+
+    DOM 更新时机​
+    当你修改了响应式状态时，DOM 会被自动更新。但是需要注意的是，DOM 更新不是同步的。Vue 会在“next tick”更新周期中缓冲所有状态的修改，以确保不管你进行了多少次状态修改，每个组件都只会被更新一次。
+
+    要等待 DOM 更新完成后再执行额外的代码，可以使用 nextTick() 全局 API：
+
+    js
+    <script setup>
+        import { nextTick } from 'vue'
+
+        async function increment() {
+            count.value++
+            await nextTick()
+            // 现在 DOM 已经更新了
+        }
+    </script>
+    <script>
+        import { nextTick } from 'vue'
+
+        export default {
+            setup() {
+                const count = ref(0)
+
+                function increment() {
+                    // 在 JavaScript 中需要 .value
+                    count.value++
+                }
+
+                // 不要忘记同时暴露 increment 函数
+                return {
+                    count,
+                    increment
+                }
+            }
+        }
+    </script>
+    reactive()
+    还有另一种声明响应式状态的方式，即使用 reactive() API。与将内部值包装在特殊对象中的 ref 不同，reactive() 将使对象本身具有响应性：
+
+    额外的 ref 解包细节
 </body>
 
 </html>
