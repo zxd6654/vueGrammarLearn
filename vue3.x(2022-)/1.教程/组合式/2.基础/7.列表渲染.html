@@ -42,6 +42,9 @@
     数组变化检测
     filter()，concat() 和 slice()，这些都不会更改原数组，而总是返回一个新数组。
 
+    在计算属性中使用 reverse() 和 sort() 的时候务必小心！这两个方法将变更原始数组，计算函数中不应该这么做。请在调用这些方法之前创建一个原数组的副本：
+    - return numbers.reverse()
+    + return [...numbers].reverse()
 </body>
 
 </html>

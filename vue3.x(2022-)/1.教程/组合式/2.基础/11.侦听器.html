@@ -44,11 +44,26 @@
     this.$watch
     this.$watch("question",(newValue)=>{})
 
+    一次性侦听器
+    watch(
+    source,
+    (newValue, oldValue) => {
+    // 当 `source` 变化时，仅触发一次
+    },
+    { once: true }
+    )
+
+    watchEffect()
+
+    副作用清理
+
+
     停止侦听器
     const unwatch = this.$watch('foo', callback)
 
     // ...当该侦听器不再需要时
     unwatch()
+
 
 </body>
 
