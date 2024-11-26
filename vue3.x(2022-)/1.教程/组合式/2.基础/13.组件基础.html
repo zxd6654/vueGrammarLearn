@@ -18,13 +18,18 @@
 
     传递props
     该属性的值可以像其他组件属性一样，在模板和组件的 this 上下文中访问。
+    <script setup>
+        defineProps(['title'])
+    </script>
+
+    <template>
+        <h4>{{ title }}</h4>
+    </template>
 
     监听事件
-    <script>
-        export default {
-            props: ['title'],
-            emits: ['enlarge-text']
-        }
+    <script setup>
+        defineProps(['title'])
+        defineEmits(['enlarge-text'])
     </script>
 
     通过插槽来分配内容
