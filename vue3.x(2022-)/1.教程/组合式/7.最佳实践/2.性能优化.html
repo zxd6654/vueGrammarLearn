@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    概述​
+    Vue 在大多数常见场景下性能都是很优秀的，通常不需要手动优化。然而，总会有一些具有挑战性的场景需要进行针对性的微调。在本节中，我们将讨论用 Vue 开发的应用在性能方面该注意些什么。
+
+    首先，让我们区分一下 web 应用性能的两个主要方面：
+
+    页面加载性能：首次访问时，应用展示出内容与达到可交互状态的速度。这通常会用 Google 所定义的一系列 Web 指标 (Web Vitals) 来进行衡量，如最大内容绘制 (Largest Contentful Paint，缩写为
+    LCP) 和首次输入延迟 (First Input Delay，缩写为 FID)。
+
+    更新性能：应用响应用户输入更新的速度。比如当用户在搜索框中输入时结果列表的更新速度，或者用户在一个单页面应用 (SPA) 中点击链接跳转页面时的切换速度。
+
+    分析选项
+
+    页面加载优化 包体积与 Tree-shaking 优化 代码分割
+
+    更新优化 Props 稳定性 v-once v-memo   计算属性稳定性
+
+    在 Vue 之中，一个子组件只会在其至少一个 props 改变时才会更新。思考以下示例：
+
+    ListItem v-for="item in list" :id="item.id" :active-id="activeId" />
+    在 ListItem> 组件中，它使用了 id 和 activeId 两个 props 来确定它是否是当前活跃的那一项。虽然这是可行的，但问题是每当 activeId 更新时，列表中的每一个 ListItem> 都会跟着更新！
+
+    理想情况下，只有活跃状态发生改变的项才应该更新。我们可以将活跃状态比对的逻辑移入父组件来实现这一点，然后让 ListItem> 改为接收一个 active prop：
+
+    ListItem v-for="item in list" :id="item.id" :active="item.id === activeId" />
+    现在，对于大多数的组件来说，activeId 改变时，它们的 active prop 都会保持不变，因此它们无需再更新。总结一下，这个技巧的核心思想就是让传给子组件的 props 尽量保持稳定。
+
+    通用优化 大型虚拟列表 减少大型不可变数据的响应性开销 避免不必要的组件抽象
+</body>
+
+</html>
