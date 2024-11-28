@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<bo>
+    像 TypeScript 这样的类型系统可以在编译时通过静态分析检测出很多常见错误。这减少了生产环境中的运行时错误，也让我们在重构大型项目的时候更有信心。通过 IDE 中基于类型的自动补全，TypeScript
+    还改善了开发体验和效率。
+
+    Vue 本身就是用 TypeScript 编写的，并对 TypeScript 提供了一等公民的支持。所有的 Vue 官方库都自带了类型声明文件，开箱即用。
+
+    Vue - Official (之前是 Volar) 是官方的 VS Code 扩展，提供了 Vue 单文件组件中的 TypeScript 支持，还伴随着一些其他非常棒的特性。
+    Vue - Official 扩展取代了我们之前为 Vue 2 提供的官方 VS Code 扩展 Vetur。如果你之前已经安装了 Vetur，请确保在 Vue 3 的项目中禁用它。
+
+    模板中的 TypeScript
+    <script setup lang="ts">
+        //  let x: string | number = 1
+    </script>
+
+    <template>
+        <!-- 出错，因为 x 可能是字符串 -->
+        {{ x.toFixed(2) }}
+    </template>
+    </script>
+    </body>
+
+</html>
