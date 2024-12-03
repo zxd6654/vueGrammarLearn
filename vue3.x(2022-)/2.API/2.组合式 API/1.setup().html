@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    基本使用
+    setup() 钩子是在组件中使用组合式 API 的入口，通常只在以下情况下使用：
+
+    需要在非单文件组件中使用组合式 API 时。
+    需要在基于选项式 API 的组件中集成基于组合式 API 的代码时。
+
+    在模板中访问从 setup 返回的 ref 时，它会自动浅层解包，因此你无须再在模板中为它写 .value。当通过 this 访问时也会同样如此解包。
+    setup() 自身并不含对组件实例的访问权，即在 setup() 中访问 this 会是 undefined。你可以在选项式 API 中访问组合式 API 暴露的值，但反过来则不行。
+
+    访问 Props
+    setup 函数的第一个参数是组件的 props。
+
+    请注意如果你解构了 props 对象，解构出的变量将会丢失响应性。因此我们推荐通过 props.xxx 的形式来使用其中的 props。
+
+    Setup 上下文
+    传入 setup 函数的第二个参数是一个 Setup 上下文对象。
+    setup(props, { attrs, slots, emit, expose }) {
+    ...
+    }
+
+    与渲染函数一起使用
+    setup 也可以返回一个渲染函数，此时在渲染函数中可以直接使用在同一作用域下声明的响应式状态
+</body>
+
+</html>

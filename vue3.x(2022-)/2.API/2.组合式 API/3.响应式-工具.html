@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    isRef() 检查某个值是否为 ref。
+    unref() 如果参数是 ref，则返回内部值，否则返回参数本身。
+    toRef() 可以将值、refs 或 getters 规范化为 refs 
+    toValue()
+    toRefs() 将一个响应式对象转换为一个普通对象，这个普通对象的每个属性都是指向源对象相应属性的 ref。每个单独的 ref 都是使用 toRef() 创建的。
+    isProxy() 检查一个对象是否是由 reactive()、readonly()、shallowReactive() 或 shallowReadonly() 创建的代理。
+    isReactive() 检查一个对象是否是由 reactive() 或 shallowReactive() 创建的代理。
+    isReadonly() 检查传入的值是否为只读对象。只读对象的属性可以更改，但他们不能通过传入的对象直接赋值。
+
+</body>
+
+</html>
