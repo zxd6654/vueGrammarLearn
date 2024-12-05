@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    组件作用域 CSS
+    深度选择器
+    <style scoped>
+        .a :deep(.b) {
+            /* ... */
+        }
+    </style>
+    插槽选择器
+    <style scoped>
+        :slotted(div) {
+            color: red;
+        }
+    </style>
+    全局选择器
+    <style scoped>
+        :global(.red) {
+            color: red;
+        }
+    </style>
+
+    CSS Modules
+    一个 style module> 标签会被编译为 CSS Modules 并且将生成的 CSS class 作为 $style 对象暴露给组件
+
+    CSS 中的 v-bind()
+    单文件组件的 style> 标签支持使用 v-bind CSS 函数将 CSS 的值链接到动态的组件状态
+
+</body>
+
+</html>

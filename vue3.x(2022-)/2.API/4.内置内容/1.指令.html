@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    v-text 更新元素的文本内容。
+    v-html 更新元素的 innerHTML。scoped 样式将不会作用于 v-html 里的内容
+    v-show 基于表达式值的真假性，来改变元素的可见性。
+    v-if 基于表达式值的真假性，来条件性地渲染元素或者模板片段。
+    v-else 表示 v-if 或 v-if / v-else-if 链式调用的“else 块”。
+    v-else-if 表示 v-if 的“else if 块”。可以进行链式调用。
+    v-for 基于原始数据多次渲染元素或模板块。
+    v-on 给元素绑定事件监听器。
+    v-bind 动态的绑定一个或多个 attribute，也可以是组件的 prop。
+    .camel - 将短横线命名的 attribute 转变为驼峰式命名。
+    .prop - 强制绑定为 DOM property (3.2+)。
+    .attr - 强制绑定为 DOM attribute (3.2+)。
+
+    v-model 在表单输入元素或组件上创建双向绑定。
+    仅限：
+
+    input>
+    select>
+    textarea>
+    components
+    修饰符
+
+    .lazy - 监听 change 事件而不是 input
+    .number - 将输入的合法字符串转为数字
+    .trim - 移除输入内容两端空格
+
+    v-slot 用于声明具名插槽或是期望接收 props 的作用域插槽。
+    v-pre 跳过该元素及其所有子元素的编译。
+    v-once 仅渲染元素和组件一次，并跳过之后的更新。
+    v-memo
+    缓存一个模板的子树。在元素和组件上都可以使用。为了实现缓存，该指令需要传入一个固定长度的依赖值数组进行比较。如果数组里的每个值都与最后一次的渲染相同，那么整个子树的更新将被跳过。
+    v-cloak 用于隐藏尚未完成编译的 DOM 模板。
+</body>
+
+</html>
