@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
-<router-link :to="{ name: 'user', params: { userId: 123 }}">User</router-link>
 
-router.push({ name: 'user', params: { userId: 123 }})
-<script>
-    const router = new VueRouter({
-        routes: [
-            {
-                path: '/user/:userId',
-                name: 'user',
-                component: User
-            }
-        ]
-    })
-</script>
+<body>
+    使用 name 有很多优点：
+
+    没有硬编码的 URL。
+    params 的自动编码/解码。
+    防止你在 URL 中出现打字错误。
+    绕过路径排序，例如展示一个匹配相同路径但排序较低的路由。
+    所有路由的命名都必须是唯一的。如果为多条路由添加相同的命名，路由器只会保留最后那一条。
+    <router-link :to="{ name: 'user', params: { userId: 123 }}">User</router-link>
+
+    router.push({ name: 'user', params: { userId: 123 }})
+    <script>
+        const router = new VueRouter({
+            routes: [
+                {
+                    path: '/user/:userId',
+                    name: 'user',
+                    component: User
+                }
+            ]
+        })
+    </script>
 </body>
+
 </html>

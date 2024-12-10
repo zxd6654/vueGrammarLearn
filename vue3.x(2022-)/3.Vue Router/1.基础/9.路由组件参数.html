@@ -11,6 +11,13 @@
 
 使用 props 将组件和路由解耦：
 
+当 props 设置为 true 时，route.params 将被设置为组件的 props。
+
+布尔模式
+命名视图
+对象模式
+函数模式
+通过 RouterView
 <body>
     <script>
         const User = {
@@ -50,6 +57,17 @@
             ]
         })
     </script>
+    命名视图
+    对于有命名视图的路由，你必须为每个命名视图定义 props 配置：
+    
+    
+    const routes = [
+      {
+        path: '/user/:id',
+        components: { default: User, sidebar: Sidebar },
+        props: { default: true, sidebar: false }
+      }
+    ]
 </body>
 
 </html>

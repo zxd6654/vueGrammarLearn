@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    在参数中自定义正则
+    <script>
+        var routes = [
+            // /:orderId -> 仅匹配数字
+            { path: '/:orderId(\\d+)' },
+            // /:productName -> 匹配其他任何内容
+            { path: '/:productName' },
+        ]
+    </script>
+    可重复的参数
+    <script>
+        var routes = [
+            // /:chapters ->  匹配 /one, /one/two, /one/two/three, 等
+            { path: '/:chapters+' },
+            // /:chapters -> 匹配 /, /one, /one/two, /one/two/three, 等
+            { path: '/:chapters*' },
+        ]
+    </script>
+    Sensitive 与 strict 路由配置
+    <script>
+        const router = createRouter({
+            history: createWebHistory(),
+            routes: [
+                // 将匹配 /users/posva 而非：
+                // - /users/posva/ 当 strict: true
+                // - /Users/posva 当 sensitive: true
+                { path: '/users/:id', sensitive: true },
+                // 将匹配 /users, /Users, 以及 /users/42 而非 /users/ 或 /users/42/
+                { path: '/users/:id?' },
+            ],
+            strict: true, // applies to all routes
+        })
+    </script>
+    可选参数
+    <script>
+        //你也可以通过使用 ? 修饰符(0 个或 1 个)将一个参数标记为可选：
+        const routes = [
+            // 匹配 /users 和 /users/posva
+            { path: '/users/:userId?' },
+            // 匹配 /users 和 /users/42
+            { path: '/users/:userId(\\d+)?' },
+        ]
+        //请注意，* 在技术上也标志着一个参数是可选的，但 ? 参数不能重复。
+    </script>
+    调试
+</body>
+
+</html>

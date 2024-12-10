@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+redirect
+重定向也是通过 routes 配置来完成，下面例子是从 /home 重定向到 /：
+
+
+const routes = [{ path: '/home', redirect: '/' }]
+重定向的目标也可以是一个命名的路由：
+
+
+const routes = [{ path: '/home', redirect: { name: 'homepage' } }]
+甚至是一个方法，动态返回重定向目标：
+
+
+const routes = [
+  {
+    // /search/screens -> /search?q=screens
+    path: '/search/:searchText',
+    redirect: to => {
+      // 方法接收目标路由作为参数
+      // return 重定向的字符串路径/路径对象
+      return { path: '/search', query: { q: to.params.searchText } }
+    },
+  },
+  {
+    path: '/search',
+    // ...
+  },
+]
+
+
+alias
+重定向是指当用户访问 /home 时，URL 会被 / 替换，然后匹配成 /。那么什么是别名呢？
+
+将 / 别名为 /home，意味着当用户访问 /home 时，URL 仍然是 /home，但会被匹配为用户正在访问 /。
+
+上面对应的路由配置为：
+
+
+const routes = [{ path: '/', component: Homepage, alias: '/home' }]
+通过别名，你可以自由地将 UI 结构映射到一个任意的 URL，而不受配置的嵌套结构的限制。使别名以 / 开头，以使嵌套路径中的路径成为绝对路径。你甚至可以将两者结合起来，用一个数组提供多个别名：
+
+
+const routes = [
+  {
+    path: '/users',
+    component: UsersLayout,
+    children: [
+      // 为这 3 个 URL 呈现 UserList
+      // - /users
+      // - /users/list
+      // - /people
+      { path: '', component: UserList, alias: ['/people', 'list'] },
+    ],
+  },
+]
+<body>
+
+</body>
+
+</html>

@@ -12,6 +12,11 @@ router.push、 router.replace 和 router.go
 1 使用 router-link 创建 a 标签来定义导航链接，
 2 router 的实例方法，通过编写代码来实现。
 
+导航到不同的位置
+替换当前位置
+横跨历史
+篡改历史
+
 <body>
     <script>
         // 字符串
@@ -39,18 +44,18 @@ router.push、 router.replace 和 router.go
         })
     </script>
 
-如果提供了path，params会被忽略，上述例子中的query并不属于这种情况
-取而代之的是下面的例子做法，你需要提供路由的name或者手写完整的带有参数的path
+    如果提供了path，params会被忽略，上述例子中的query并不属于这种情况
+    取而代之的是下面的例子做法，你需要提供路由的name或者手写完整的带有参数的path
 
-<script>
-    const userId='123';
-    router.push({name:'user',params:{userId}})
-    router.push({path:`/user/${userId}`})
+    <script>
+        const userId = '123';
+        router.push({ name: 'user', params: { userId } })
+        router.push({ path: `/user/${userId}` })
 
-</script>
+    </script>
 
-router.replace跟 router.push 很像，唯一的不同就是，它不会向 history 添加新记录，
-而是跟它的方法名一样 —— 替换掉当前的 history 记录。
+    router.replace跟 router.push 很像，唯一的不同就是，它不会向 history 添加新记录，
+    而是跟它的方法名一样 —— 替换掉当前的 history 记录。
 </body>
 
 </html>
