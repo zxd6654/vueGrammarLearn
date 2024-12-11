@@ -9,44 +9,47 @@
 </head>
 
 <body>
-定义路由的时候可以配置 meta 字段：
+    定义路由的时候可以配置 meta 字段：
 
-那么如何访问这个 meta 字段呢？ $route.matched 数组
-
-<script>
-    const router = new VueRouter({
-        routes: [{
-            path: '/foo',
-            component: Foo,
-            children: [{
-                path: 'bar',
-                component: Bar,
-                // a meta field
-                meta: {
-                    requiresAuth: true
-                }
-            }]
-        }]
-    })
-
-    //登录验证
-    router.beforeEach((to, from, next) => {
-        if (to.matched.some(record => record.meta.requiresAuth)) {
-            if (!auth.loggedIn()) {
-                next({
-                    path: 'login',
-                    query: {
-                        redirect: to.fullPath
+    那么如何访问这个 meta 字段呢？ route.matched 数组
+    一个路由匹配到的所有路由记录会暴露为 route 对象(还有在导航守卫中的路由对象)的route.matched 数组。
+    我们需要遍历这个数组来检查路由记录中的 meta 字段，但是 Vue Router 还为你提供了一个 route.meta 方法，它是一个非递归合并所有 meta 字段（从父字段到子字段）的方法。
+    <script>
+        const routes = [
+            {
+                path: '/posts',
+                component: PostsLayout,
+                children: [
+                    {
+                        path: 'new',
+                        component: PostsNew,
+                        // 只有经过身份验证的用户才能创建帖子
+                        meta: { requiresAuth: true },
+                    },
+                    {
+                        path: ':id',
+                        component: PostsDetail,
+                        // 任何人都可以阅读文章
+                        meta: { requiresAuth: false },
                     }
-                })
-            } else {
-                next();
+                ]
             }
-        } else {
-            next();
-        }
-    })
-</script>
+        ]
+
+        router.beforeEach((to, from) => {
+            // 而不是去检查每条路由记录
+            // to.matched.some(record => record.meta.requiresAuth)
+            if (to.meta.requiresAuth && !auth.isLoggedIn()) {
+                // 此路由需要授权，请检查是否已登录
+                // 如果没有，则重定向到登录页面
+                return {
+                    path: '/login',
+                    // 保存我们所在的位置，以便以后再来
+                    query: { redirect: to.fullPath },
+                }
+            }
+        })
+    </script>
 </body>
 
 </html>

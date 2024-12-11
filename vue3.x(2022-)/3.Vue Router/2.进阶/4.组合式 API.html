@@ -1,11 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    因为我们在 setup 里面没有访问 this，所以我们不能直接访问 this.$router 或 this.$route。作为替代，我们使用 useRouter 和 useRoute 函数
+
+    导航守卫
+    <script setup>
+        import { onBeforeRouteLeave, onBeforeRouteUpdate } from 'vue-router'
+        import { ref } from 'vue'
+
+        // 与 beforeRouteLeave 相同，无法访问 `this`
+        onBeforeRouteLeave((to, from) => {
+            const answer = window.confirm(
+                'Do you really want to leave? you have unsaved changes!'
+            )
+            // 取消导航并停留在同一页面上
+            if (!answer) return false
+        })
+
+        const userData = ref()
+
+        // 与 beforeRouteUpdate 相同，无法访问 `this`
+        onBeforeRouteUpdate(async (to, from) => {
+            //仅当 id 更改时才获取用户，例如仅 query 或 hash 值已更改
+            if (to.params.id !== from.params.id) {
+                userData.value = await fetchUser(to.params.id)
+            }
+        })
+    </script>
+
+    useLink
+    Vue Router 将 RouterLink 的内部行为作为一个组合式函数 (composable) 公开。
+    它接收一个类似 RouterLink 所有 prop 的响应式对象，并暴露底层属性来构建你自己的 RouterLink 组件或生成自定义链接
 </body>
+
 </html>

@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    RotuerView 组件暴露了一个插槽，可以用来渲染路由组件
+    <script>
+        <router-view v-slot="{ Component }">
+            <component is="Component" />
+        </router-view>
+    </script>
 </body>
+
 </html>
