@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    在大多数情况下，state 都是你的 store 的核心。人们通常会先定义能代表他们 APP 的 state。在 Pinia 中，state 被定义为一个返回初始状态的函数。这使得 Pinia 可以同时支持服务端和客户端。
+    <script>
+        import { defineStore } from 'pinia'
+
+        const useCounterStore = defineStore('counter', {
+            state: () => {
+                return {
+                    count: 0
+                }
+            }
+        })
+    </script>
+
+    访问 state
+    默认情况下，你可以通过 store 实例访问 state，直接对其进行读写。
+    新的属性如果没有在 state() 中被定义，则不能被添加。它必须包含初始状态。
+
+    重置 state
+    使用选项式 API 时，你可以通过调用 store 的 $reset() 方法将 state 重置为初始值。
+
+
+    const store = useStore()
+
+    store.$reset()
+    在 $reset() 内部，会调用 state() 函数来创建一个新的状态对象，并用它替换当前状态。
+
+    在 Setup Stores 中，您需要创建自己的 $reset() 方法：
+
+
+    export const useCounterStore = defineStore('counter', () => {
+    const count = ref(0)
+
+    function $reset() {
+    count.value = 0
+    }
+
+    return { count, $reset }
+    })
+
+    变更 state
+    除了用 store.count++ 直接改变 store，你还可以调用 $patch 方法。它允许你用一个 state 的补丁对象在同一时间更改多个属性：
+
+
+    store.$patch({
+    count: store.count + 1,
+    age: 120,
+    name: 'DIO',
+    })
+
+    替换 state
+    你不能完全替换掉 store 的 state，因为那样会破坏其响应性。但是，你可以 patch 它。
+
+
+    // 这实际上并没有替换`$state`
+    store.$state = { count: 24 }
+    // 在它内部调用 `$patch()`：
+    store.$patch({ count: 24 })
+    你也可以通过变更 pinia 实例的 state 来设置整个应用的初始 state。这常用于 SSR 中的激活过程。
+
+
+    pinia.state.value = {}
+</body>
+
+</html>
